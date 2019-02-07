@@ -4,11 +4,11 @@ import LoginPage from './views/LoginPage.vue'
 
 // import mock data
 // in peoduction environment it will ve recieved from the server
-import data from '../public/mock/data.json'
-import token from '../public/mock/token'
+// import data from '../public/mock/data.json'
+// import token from '../public/mock/token'
 import store from './store'
 
-import axios from 'axios'
+// import axios from 'axios'
 
 
 Vue.use(Router)
@@ -16,10 +16,13 @@ Vue.use(Router)
 const router = new Router({
   mode: 'history',
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'null'
-    // },
+    {
+      path: '/',
+      name: 'redirect',
+      meta: {
+        requireAuth: true
+      }
+    },
     {
       path: '/login',
       name: 'loginPage',
