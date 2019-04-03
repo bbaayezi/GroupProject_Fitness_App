@@ -1,29 +1,9 @@
 # groupproject_fitness_app
 
-## Project setup
-```
-npm install
-```
+## Examples Branch
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+本分支主要用于编写各种示例用于帮助组员熟悉Vue的语法
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Run your tests
-```
-npm run test
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+所有示例中不使用`vue-router`以及`vuex`，示例组件直接渲染至`App.vue`的`v-content`标签下
