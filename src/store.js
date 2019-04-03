@@ -6,7 +6,24 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     userStatus: {
-      isLoggedIn: false
+      // check for login status
+      isLoggedIn: true,
+    },
+    homePage: {
+      carouselList: [
+        {
+            title: '1',
+            src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg'
+        },
+        {
+            title: '2',
+            src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg'
+        },
+        {
+            title: '3',
+            src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg'
+        },
+      ]
     }
   },
   mutations: {
@@ -20,6 +37,7 @@ export default new Vuex.Store({
     }
   },
   getters: {
-    getLoginStatus: state => state.userStatus.isLoggedIn
+    getLoginStatus: state => state.userStatus.isLoggedIn,
+    getCarouselList: state=> state.homePage.carouselList
   }
 })
