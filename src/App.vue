@@ -24,11 +24,11 @@
       <!-- 另外，可以使用v-for来循环创建card -->
       <br>
       <h2>Card list example</h2>
-      <ul>
-        <li v-for="(card, id) in cardList" :key=id>
-          <Card :imgSrc="card.src" :title="card.title"/>
-        </li>
-      </ul>
+      <v-layout row wrap justify-space-between>
+        <v-flex v-for="(card, id) in cardList" :key=id md3>
+          <Card :key=id :imgSrc="card.src" :title="card.title"/>
+        </v-flex>
+      </v-layout>
     </v-content>
   </v-app>
 </template>
@@ -66,3 +66,16 @@ export default {
   }
 }
 </script>
+
+<style>
+  ul, li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  li {
+    display: inline;
+    float: left;
+  }
+</style>
+
