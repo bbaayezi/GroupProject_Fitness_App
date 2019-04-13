@@ -6,13 +6,13 @@
         ></v-img>
 
         <v-card-title primary-title>
-          <div>
-            <h3 class="headline mb-0 text-md-center"><b>{{ title }}</b></h3>
-          </div>
-        </v-card-title>
-        <v-card-actions>
+            <div class="headline mb-0 text-md-center"><b>{{ title }}</b></div>
+            <v-spacer></v-spacer>
+            <v-card-actions>
           <v-btn flat color="orange">VIEW</v-btn>
         </v-card-actions>
+        </v-card-title>
+        
   </v-card>
 </template>
 

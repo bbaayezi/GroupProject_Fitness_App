@@ -3,7 +3,7 @@
         <v-layout align-center justify-center>
             <v-flex xs12 sm8 md4>
                 <v-card class="elevation-12">
-                    <v-toolbar dark color="primary">
+                    <v-toolbar dark color="#ffad33">
                         <v-toolbar-title>Login form</v-toolbar-title>
                         <v-spacer></v-spacer>
                         <v-tooltip bottom>
@@ -37,8 +37,8 @@
                     </v-card-text>
                     <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn flat @click ="register">Don't have a username?</v-btn>
-                        <v-btn color="primary" @click.prevent="submitForm">Login</v-btn>
+                        <v-btn flat color = "#757575" @click ="register">Don't have a username?</v-btn>
+                        <v-btn class = "mx-3 white--text" color="#ffad33" @click.prevent="submitForm">Login</v-btn>
                         
                     </v-card-actions>
                 </v-card>

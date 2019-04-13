@@ -3,14 +3,15 @@
     <Carousel/>
 
     <br>
-    <h2>Course</h2>
+    <div class="display-3 font-weight-bold orange--text text-md-center">Course</div><br>
     <v-layout justify-space-around row wrap>
-      <v-flex v-for="(card, id) in getCourseList" :key="id" xs12 sm8 md5>
+      <v-flex v-for="(card, id) in getCourseList" :key="id" xs12 sm8 md4>
         <Card :imgSrc="card.src" :title="card.title"/>
       </v-flex>
     </v-layout>
     <br>
-    <h2>Recipe</h2>
+
+    <div class="display-3 font-weight-bold orange--text text-md-center">Recipe</div><br>
     <v-layout justify-space-around row wrap>
       <v-flex v-for="(card, id) in getRecipeList" :key="id" xs12 sm8 md3>
         <Card :imgSrc="card.src" :title="card.title"/>
@@ -40,7 +41,7 @@ export default {
     ...mapGetters([
       "getCardList",
       "getCourseList",
-      "getRecipeList"
+      "getRecipeList",
     ])
   }
 };

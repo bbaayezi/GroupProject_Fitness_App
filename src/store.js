@@ -12,39 +12,39 @@ export default new Vuex.Store({
     homePage: {
       carouselList: [{
           title: '1',
-          src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg'
+          src: require('../public/img/card/banner1.jpg')
         },
         {
           title: '2',
-          src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg'
+          src: require('../public/img/card/banner2.jpeg')
         },
         {
           title: '3',
-          src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg'
+          src: require('../public/img/card/banner3.jpg')
         },
       ],
       courseList: [
         {
           title: "Indoor",
-          src: "https://cdn.vuetifyjs.com/images/cards/desert.jpg"
+          src: require('../public/img/card/indoor.jpg')
         },
         {
           title: "Outdoor",
-          src: "https://cdn.vuetifyjs.com/images/cards/desert.jpg"
+          src: require('../public/img/card/outdoor.png')
         }
       ],
       recipeList: [
         {
           title: "Lose Weight",
-          src: "https://cdn.vuetifyjs.com/images/cards/desert.jpg"
+          src: require('../public/img/card/food1.jpg')
         },
         {
           title: "Get Strong",
-          src: "https://cdn.vuetifyjs.com/images/cards/desert.jpg"
+          src: require('../public/img/card/food2.jpg')
         },
         {
           title: "Get Fit",
-          src: "https://cdn.vuetifyjs.com/images/cards/desert.jpg"
+          src: require('../public/img/card/food3.jpg')
         }
       ],
       desserts: [
@@ -76,6 +76,6 @@ export default new Vuex.Store({
     getLoginStatus: state => state.userStatus.isLoggedIn,
     getCarouselList: state => state.homePage.carouselList,
     getCourseList: state => state.homePage.courseList,
-    getRecipeList: state => state.homePage.recipeList
+    getRecipeList: state => state.homePage.recipeList,
   }
 })

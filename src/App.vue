@@ -1,37 +1,38 @@
 <template>
   <v-app>
-    <v-toolbar app>
+    <v-toolbar app
+    color="#ffad33">
       <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
+        <span class="mx-3 white--text">Vuetify</span>
+        <span class="mx-3 white--text">MATERIAL DESIGN</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn
       flat
         @click="jumpHome"
       >
-        <span class="mr-1">Home</span>
+        <span class="mx-2 white--text">Home</span>
       </v-btn>
 
       <v-btn
       flat
         @click="jumpAbout"
       >
-        <span class="mr-2">About</span>
+        <span class="mx-2 white--text">About</span>
       </v-btn>
 
       <v-btn v-if="loginStatus == false"
       flat
         @click="jumpLogin"
       >
-        <span class="mr-3">Login</span>
+        <span class="mx-2 white--text">Login</span>
       </v-btn>
 
        <v-btn v-if="loginStatus == true"
       flat
         @click="jumpLogout"
       >
-        <span class="mr-3">Logout</span>
+        <span class="mx-2 white--text">Logout</span>
       </v-btn>
     </v-toolbar>
     <router-view></router-view>
