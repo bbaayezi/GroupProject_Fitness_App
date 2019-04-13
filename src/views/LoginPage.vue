@@ -37,7 +37,9 @@
                     </v-card-text>
                     <v-card-actions>
                         <v-spacer></v-spacer>
+                        <v-btn flat @click ="register">Don't have a username?</v-btn>
                         <v-btn color="primary" @click.prevent="submitForm">Login</v-btn>
+                        
                     </v-card-actions>
                 </v-card>
             </v-flex>
@@ -75,6 +77,9 @@ export default {
             this.$router.push('home')
             // update state in Vuex
             
+        },
+        register(){
+            this.$router.push('register')
         }
     }
 }
