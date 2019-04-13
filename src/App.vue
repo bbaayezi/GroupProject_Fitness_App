@@ -16,6 +16,7 @@
     </v-toolbar> -->
 
     <v-content>
+      <Carousel />
       <!-- <HelloWorld/> -->
       <!-- 使用props来进行父子通信，规定card的图片地址和标题 -->
       <Card imgSrc="https://cdn.vuetifyjs.com/images/cards/desert.jpg"
@@ -36,12 +37,14 @@
 <script>
 import HelloWorld from './components/HelloWorld'
 import Card from './components/Card'
+import Carousel from './components/Carousel'
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    Card
+    Card,
+    Carousel
   },
   data () {
     return {
