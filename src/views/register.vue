@@ -22,13 +22,18 @@
       required
     ></v-text-field>
      <v-select
-          :items="gender"
-          v-model="e1"
+     :rules="[v => !!v || 'Please select an option']"
+          :items="genderList"
+          v-model="gender"
           label="Select"
-          single-line
-          auto
-          hide-details
+          required
         ></v-select>
+    <v-radio-group 
+              required
+    v-model="row" row>
+      <v-radio label="User" value="User" ></v-radio>
+      <v-radio label="Trainer" value="Trainer"></v-radio>
+    </v-radio-group>
     <v-checkbox
       v-model="checkbox"
       :rules="[v => !!v || 'You must agree to continue!']"
@@ -53,9 +58,10 @@
 
   export default {
     data: () => ({
-      e1:null,
-      gender: ['Male','Female','Decline to indicate'],
+      gender:null,
+      genderList: ['Male','Female','Decline to indicate'],
       valid: true,
+      formChecked: false,
       name: '',
       nameRules: [
         v => !!v || 'Name is required',
@@ -73,8 +79,12 @@
         v => (v && v.length <= 16) || 'Password must be less than 16 characters',
         v => /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(v) || 'Password must have at least one digit, one lower letter and one captial letter'
       ],
-      checkbox: false
+      checkbox: false,
+      row: null
     }),
+    computed: {
+        
+    },
 
     methods: {
       submit () {
@@ -84,15 +94,17 @@
             name: this.name,
             email: this.email,
             password: this.password,
-            checkbox: this.checkbox
+            checkbox: this.checkbox,
+            gender: this.gender
           })
+          this.$router.push('login')
         }
-         this.$router.push('login')
+         
       },
       clear () {
         this.$refs.form.reset()
       }
-    }
+    },
   }
 </script>
 
