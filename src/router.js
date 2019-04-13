@@ -33,7 +33,7 @@ const router = new Router({
     {
       path: '/register',
       name: 'register',
-      component: () => import('./views/register.vue'),
+      component: () => import('./views/Register.vue'),
     },
     {
       path: '/about',
