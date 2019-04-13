@@ -116,5 +116,14 @@ export default {
 </script>
 
 <style>
- li{float:left; list-style:none}
+  ul, li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  li {
+    display: inline;
+    float: left;
+  }
 </style>
+

@@ -1,7 +1,5 @@
 <template>
-  <!-- <v-layout>
-    <v-flex sm10 offset-sm1> -->
-      <v-card>
+  <v-card>
         <v-img
           :src=imgSrc
           aspect-ratio="1.5"
@@ -21,9 +19,7 @@
           <v-btn flat color="orange">Share</v-btn>
           <v-btn flat color="orange">Explore</v-btn>
         </v-card-actions>
-      </v-card>
-    <!-- </v-flex>
-  </v-layout> -->
+  </v-card>
 </template>
 
 <script>
