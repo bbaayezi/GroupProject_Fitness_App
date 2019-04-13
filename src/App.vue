@@ -35,10 +35,12 @@
       </v-btn>
     </v-toolbar>
     <router-view></router-view>
+    <Footer />
   </v-app>
 </template>
 
 <script>
+import Footer from "./components/Footer";
 
 export default {
   name: 'App',
@@ -47,6 +49,9 @@ export default {
       loginStatus: false,
       //
     }
+  },
+  components: {
+    Footer
   },
   methods: {
         jumpAbout() {

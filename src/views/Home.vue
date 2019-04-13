@@ -34,7 +34,7 @@ export default {
   },
   components: {
     Carousel,
-    Card
+    Card,
   },
   computed: {
     ...mapGetters([
