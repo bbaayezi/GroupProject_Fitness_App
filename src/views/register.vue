@@ -21,12 +21,21 @@
       label="  Password"
       required
     ></v-text-field>
+     <v-select
+          :items="gender"
+          v-model="e1"
+          label="Select"
+          single-line
+          auto
+          hide-details
+        ></v-select>
     <v-checkbox
       v-model="checkbox"
       :rules="[v => !!v || 'You must agree to continue!']"
       label="Do you agree?"
       required
     ></v-checkbox>
+
     <v-btn
       :disabled="!valid"
       @click="submit"
@@ -44,6 +53,8 @@
 
   export default {
     data: () => ({
+      e1:null,
+      gender: ['Male','Female','Decline to indicate'],
       valid: true,
       name: '',
       nameRules: [
