@@ -23,18 +23,39 @@ export default new Vuex.Store({
           src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg'
         },
       ],
-      cardList: [{
-          title: '1',
-          src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg'
+      courseList: [
+        {
+          title: "Indoor",
+          src: "https://cdn.vuetifyjs.com/images/cards/desert.jpg"
         },
         {
-          title: '2',
-          src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg'
+          title: "Outdoor",
+          src: "https://cdn.vuetifyjs.com/images/cards/desert.jpg"
+        }
+      ],
+      recipeList: [
+        {
+          title: "Lose Weight",
+          src: "https://cdn.vuetifyjs.com/images/cards/desert.jpg"
         },
         {
-          title: '3',
-          src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg'
+          title: "Get Strong",
+          src: "https://cdn.vuetifyjs.com/images/cards/desert.jpg"
         },
+        {
+          title: "Get Fit",
+          src: "https://cdn.vuetifyjs.com/images/cards/desert.jpg"
+        }
+      ],
+      desserts: [
+        {
+          name: "Frozen Yogurt",
+          calories: 159,
+          fat: 6.0,
+          carbs: 24,
+          protein: 4.0,
+          iron: "1%"
+        }
       ]
     }
   },
@@ -54,6 +75,7 @@ export default new Vuex.Store({
   getters: {
     getLoginStatus: state => state.userStatus.isLoggedIn,
     getCarouselList: state => state.homePage.carouselList,
-    getCardList: state => state.homePage.cardList
+    getCourseList: state => state.homePage.courseList,
+    getRecipeList: state => state.homePage.recipeList
   }
 })

@@ -34,9 +34,7 @@
         <span class="mr-3">Logout</span>
       </v-btn>
     </v-toolbar>
-    <v-content>
-      <router-view></router-view>
-    </v-content>
+    <router-view></router-view>
   </v-app>
 </template>
 
@@ -75,14 +73,15 @@ export default {
 </script>
 
 <style>
-  ul, li {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-  li {
-    display: inline;
-    float: left;
-  }
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+li {
+  display: inline;
+  float: left;
+}
 </style>
 
