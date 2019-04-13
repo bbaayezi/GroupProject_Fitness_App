@@ -1,10 +1,10 @@
 <template>
-  <v-layout>
-    <v-flex xs12 sm6 offset-sm3>
+  <!-- <v-layout>
+    <v-flex sm10 offset-sm1> -->
       <v-card>
         <v-img
           :src=imgSrc
-          aspect-ratio="2.75"
+          aspect-ratio="1.5"
         ></v-img>
 
         <v-card-title primary-title>
@@ -12,7 +12,7 @@
             <h3 class="headline mb-0">{{ title }}</h3>
             <div>
               <!-- 卡片的内容也可以作为props传入 -->
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptatem distinctio eum eius obcaecati labore, dignissimos amet consequatur, est quaerat voluptatum saepe alias dolorum porro. In temporibus tempore eveniet nihil?
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit
             </div>
           </div>
         </v-card-title>
@@ -22,8 +22,8 @@
           <v-btn flat color="orange">Explore</v-btn>
         </v-card-actions>
       </v-card>
-    </v-flex>
-  </v-layout>
+    <!-- </v-flex>
+  </v-layout> -->
 </template>
 
 <script>
