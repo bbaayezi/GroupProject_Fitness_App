@@ -46,12 +46,8 @@ export default {
   name: 'App',
   data () {
     return {
-<<<<<<< HEAD
-      
-=======
       loginStatus: false,
       //
->>>>>>> demo
     }
   },
   methods: {
