@@ -25,8 +25,13 @@ const router = new Router({
     },
     {
       path: '/login',
-      name: 'loginPage',
+      name: 'login',
       component: LoginPage
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: () => import('./views/About.vue'),
     },
     {
       path: '/home',
