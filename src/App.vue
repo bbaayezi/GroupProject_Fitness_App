@@ -7,11 +7,31 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn
-        flat
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
+      flat
+        @click="jumpHome"
       >
-        <span class="mr-2">Latest Release</span>
+        <span class="mr-1">Home</span>
+      </v-btn>
+
+      <v-btn
+      flat
+        @click="jumpAbout"
+      >
+        <span class="mr-2">About</span>
+      </v-btn>
+
+      <v-btn v-if="loginStatus == false"
+      flat
+        @click="jumpLogin"
+      >
+        <span class="mr-3">Login</span>
+      </v-btn>
+
+       <v-btn v-if="loginStatus == true"
+      flat
+        @click="jumpLogout"
+      >
+        <span class="mr-3">Logout</span>
       </v-btn>
     </v-toolbar>
     <v-content>
@@ -26,9 +46,35 @@ export default {
   name: 'App',
   data () {
     return {
+<<<<<<< HEAD
       
+=======
+      loginStatus: false,
+      //
+>>>>>>> demo
     }
-  }
+  },
+  methods: {
+        jumpAbout() {
+            this.$router.push('about')
+            // update state in Vuex
+        },
+        jumpLogin() {
+            this.$router.push('login')
+            this.loginStatus = true
+            // update state in Vuex
+        },
+        jumpHome() {
+            this.$router.push('home')
+            // update state in Vuex
+        },
+        jumpLogout() {
+            this.$router.push('home')
+            this.loginStatus = false
+            // update state in Vuex
+        },
+
+    }
 }
 </script>
 
