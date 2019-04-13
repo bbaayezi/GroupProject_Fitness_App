@@ -22,23 +22,14 @@
       <Carousel/>
       
       <br>
-      <!-- <h2>Course</h2>
-      <table>
-        <tr>
-          <td v-for="(card, id) in courseList" :key=id>
+    <h2>Course</h2>
+      <v-layout justify-space-around row wrap>
+        <v-flex v-for="(card, id) in courseList" :key=id xs12 sm8 md5>
             <Card :imgSrc="card.src" :title="card.title"/>
-          </td>
-        </tr>
-      </table> -->
-      <!-- 另外，可以使用v-for来循环创建card -->
+        </v-flex>
+      </v-layout>
       <br>
       <h2>Recipe</h2>
-      <!-- <ul>
-        <li v-for="(card, id) in cardList" :key=id>
-          <Card :imgSrc="card.src" :title="card.title"/>
-        </li>
-      </ul> -->
-      <!-- <table width = screen.width> -->
       <v-layout justify-space-around row wrap>
         <v-flex v-for="(card, id) in recipeList" :key=id xs12 sm8 md3>
             <Card :imgSrc="card.src" :title="card.title"/>
@@ -74,29 +65,25 @@ export default {
       // 在示例中的数据直接写死，实际情况可能需要从vuex中获取
       courseList: [
         {
-          title: "Kangaroo",
+          title: "Indoor",
           src: "https://cdn.vuetifyjs.com/images/cards/desert.jpg"
         },
         {
-          title: "Valley",
-          src: "https://cdn.vuetifyjs.com/images/cards/desert.jpg"
-        },
-        {
-          title: "Safari",
+          title: "Outdoor",
           src: "https://cdn.vuetifyjs.com/images/cards/desert.jpg"
         }
       ],
       recipeList: [
         {
-          title: "Kangaroo",
+          title: "Lose Weight",
           src: "https://cdn.vuetifyjs.com/images/cards/desert.jpg"
         },
         {
-          title: "Valley",
+          title: "Get Strong",
           src: "https://cdn.vuetifyjs.com/images/cards/desert.jpg"
         },
         {
-          title: "Safari",
+          title: "Get Fit",
           src: "https://cdn.vuetifyjs.com/images/cards/desert.jpg"
         }
       ],
