@@ -31,6 +31,11 @@ const router = new Router({
       component: LoginPage
     },
     {
+      path: '/register',
+      name: 'register',
+      component: () => import('./views/register.vue'),
+    },
+    {
       path: '/about',
       name: 'about',
       component: () => import('./views/About.vue'),
