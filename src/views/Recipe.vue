@@ -1,9 +1,7 @@
 <template>
   <v-content>
     <div class="display-3 font-weight-bold orange--text text-md-center">Recipe Recommendation</div><br>
-    <v-layout>
      <DataIterator/>
-    </v-layout>
   </v-content>
 </template>
 

@@ -1,5 +1,4 @@
 <template>
-  <v-container fluid grid-list-md>
     <v-data-iterator
       :items="items"
       :rows-per-page-items="rowsPerPageItems"
@@ -10,10 +9,10 @@
     >
       <template v-slot:item="props">
         <v-flex
-          xs12
-          sm6
+          xs4
+          sm4
           md4
-          lg3
+          lg4
         >
           <v-card>
             <v-card-title><h4>{{ props.item.name }}</h4></v-card-title>
@@ -52,16 +51,15 @@
         </v-flex>
       </template>
     </v-data-iterator>
-  </v-container>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      rowsPerPageItems: [4, 8],
+      rowsPerPageItems: [4, 8 ,12],
       pagination: {
-        rowsPerPage: 4
+        rowsPerPage: 2
       },
       items: this.$store.getters.getNutritionList
     }
