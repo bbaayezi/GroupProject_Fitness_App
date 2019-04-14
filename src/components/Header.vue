@@ -15,7 +15,7 @@
       <span class="mx-2 white--text">Receipe</span>
     </v-btn>
 
-    <v-btn flat @click="jump('about')">
+    <v-btn v-if="getLoginStatus" flat @click="jump('about')">
       <span class="mx-2 white--text">userInfo</span>
     </v-btn>
 
