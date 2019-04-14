@@ -7,7 +7,7 @@ export default new Vuex.Store({
   state: {
     userStatus: {
       // check for login status
-      isLoggedIn: true,
+      isLoggedIn: false,
     },
     homePage: {
       carouselList: [{
@@ -73,16 +73,13 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    SWITCH_LOGIN_STATUS(state) {
-      state.userStatus.isLoggedIn = true
+    switchLoginStatus(state, payload) {
+      state.userStatus.isLoggedIn = payload.status
     }
   },
   actions: {
-    login({
-      commit,
-      payload
-    }) {
-      commit('SWITCH_LOGIN_STATUS', payload)
+    toggleLogin({commit}, payload) {
+      commit('switchLoginStatus', payload)
     }
   },
   getters: {
