@@ -1,17 +1,11 @@
 <template>
   <v-content>
-<<<<<<< HEAD
     <div class="display-3 font-weight-bold orange--text text-md-center">Recipe Recommendation</div>
     <br>
-    <v-layout row justify-center>
-        <v-flex xs2>
+    <v-layout row justify-space-around>
+        <v-flex xs10 md2 lg5>
       <div class="display-1 font-weight-bold white--text light-green darken-1 text-md-center">Lose Weight<br></div>
     </v-flex>
-=======
-    <!-- <div class="display-3 font-weight-bold orange--text text-md-center">Recipe Recommendation</div><br> -->
-    <v-layout>
-     <DataIterator/>
->>>>>>> refs/remotes/origin/ui
     </v-layout>
     <br>
     <v-layout justify-space-around row wrap>
@@ -19,8 +13,8 @@
     </v-layout>
     <br>
     <br>
-    <v-layout row justify-center>
-        <v-flex xs2>
+    <v-layout row justify-space-around>
+        <v-flex xs10 md2 lg5>
     <div class="display-1 font-weight-bold white--text light-green darken-1 text-md-center">Get Strong</div>
     </v-flex>
     </v-layout>
@@ -30,8 +24,8 @@
     </v-layout>
     <br>
     <br>
-     <v-layout row justify-center>
-        <v-flex xs2>
+     <v-layout row justify-space-around>
+        <v-flex xs10 md2 lg5>
     <div class="display-1 font-weight-bold white--text light-green darken-1 text-md-center">Get Fit</div>
     </v-flex>
     </v-layout>
