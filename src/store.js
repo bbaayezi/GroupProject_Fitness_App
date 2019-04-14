@@ -67,6 +67,7 @@ export default new Vuex.Store({
         height: 180,
         weight: 120,
         identity: "User",
+        mail:"mike@gmail.com",
         img:"https://avataaars.io/?avatarStyle=Transparent&hairColor=orange&facialHairType=Blank&clotheType=Hoodie&clotheColor=red&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light",
       },
     ],

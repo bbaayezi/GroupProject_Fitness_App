@@ -5,7 +5,7 @@
             <v-flex xs5>
             <v-img
                 :src=imgSrc
-                height="125px"
+                height="200px"
                 contain
             ></v-img>
             </v-flex>
@@ -15,9 +15,11 @@
                 <div class="headline">ID: {{ID}}</div>
                 <div>Name: {{name}}</div>
                 <div>Age: {{age}}</div>
+                <div>Gender: {{gender}}</div>
                 <div>Height: {{height}}</div>
-                <div>weight: {{weight}}</div>
-                <div>identity: {{identity}}</div>
+                <div>Weight: {{weight}}</div>
+                <div>Mail: {{mail}}</div>
+                <div>Identity: {{identity}}</div>
                 </div>
             </v-card-title>
             </v-flex>
@@ -29,7 +31,7 @@
 
 <script>
 export default {
-    props: ['ID', 'name', 'age', 'gender', 'height', 'weight', 'identity', 'imgSrc']
+    props: ['ID', 'name', 'age', 'gender', 'height', 'weight', 'identity', 'mail', 'imgSrc']
     
 }
 </script>
