@@ -9,14 +9,11 @@
       wrap
     >
       <template v-slot:item="props">
-        <v-flex
-          xs12
-          sm6
-          md4
-          lg3
-        >
+        <v-flex xs12 sm6 md4 lg3>
           <v-card>
-            <v-card-title><h4>{{ props.item.name }}</h4></v-card-title>
+            <v-card-title>
+              <h4>{{ props.item.name }}</h4>
+            </v-card-title>
             <v-divider></v-divider>
             <v-list dense>
               <v-list-tile>
@@ -64,7 +61,7 @@ export default {
         rowsPerPage: 4
       },
       items: this.$store.getters.getNutritionList
-    }
+    };
   }
 };
 </script>
