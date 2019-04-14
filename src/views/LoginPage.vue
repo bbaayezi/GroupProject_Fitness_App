@@ -48,14 +48,14 @@ export default {
   data() {
     return {
       username: "",
-      password: Number
+      password: ""
     };
   },
   methods: {
     // 涉及异步方法，如以下提交表单方法时，使用 async await 语法糖
     // 可有效减轻Promise回调地狱的情况
     async submitForm() {
-      let res = await axios.post('http://localhost:3000/submitLogin', {
+      let res = await axios.post('http://test.scarlet-temp.tk/submitLogin', {
         username: this.username,
         password: this.password
       });
