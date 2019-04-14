@@ -7,7 +7,7 @@ export default new Vuex.Store({
   state: {
     userStatus: {
       // check for login status
-      isLoggedIn: true,
+      isLoggedIn: false,
     },
     homePage: {
       carouselList: [{
@@ -67,22 +67,20 @@ export default new Vuex.Store({
         height: 180,
         weight: 120,
         identity: "User",
+        mail:"mike@gmail.com",
         img:"https://avataaars.io/?avatarStyle=Transparent&hairColor=orange&facialHairType=Blank&clotheType=Hoodie&clotheColor=red&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light",
       },
     ],
     }
   },
   mutations: {
-    SWITCH_LOGIN_STATUS(state) {
-      state.userStatus.isLoggedIn = true
+    switchLoginStatus(state, payload) {
+      state.userStatus.isLoggedIn = payload.status
     }
   },
   actions: {
-    login({
-      commit,
-      payload
-    }) {
-      commit('SWITCH_LOGIN_STATUS', payload)
+    toggleLogin({commit}, payload) {
+      commit('switchLoginStatus', payload)
     }
   },
   getters: {

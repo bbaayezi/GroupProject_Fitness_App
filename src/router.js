@@ -23,7 +23,7 @@ const router = new Router({
       name: 'redirect',
       // meta: {
       //   requireAuth: true
-      // }
+      // },
       component: Home,
     },
     {
