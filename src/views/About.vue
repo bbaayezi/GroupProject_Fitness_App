@@ -6,12 +6,14 @@
     <v-flex v-for="(Info, id) in getInfoList" :key="id" xs12 sm8 md4>
     <InfoCard :ID="Info.ID" :name="Info.name" :age="Info.age" :gender="Info.gender" :height="Info.height" :weight="Info.weight" :identity="Info.identity" :mail="Info.mail" :imgSrc="Info.img"/>
     </v-flex>
+    <Calendars/>
   </v-content>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
 import InfoCard from "../components/InfoCard";
+import Calendars from "../components/Calendars";
 
 export default {
   data() {
@@ -20,7 +22,8 @@ export default {
     };
   },
   components: {
-    InfoCard
+    InfoCard,
+    Calendars
   },
   computed: {
     ...mapGetters([

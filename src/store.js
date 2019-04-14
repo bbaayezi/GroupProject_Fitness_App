@@ -46,7 +46,20 @@ export default new Vuex.Store({
           title: "Get Fit",
           src: require('../public/img/card/food3.jpg')
         }
-      ],indoorList: [
+      ],
+      desserts: [
+        {
+          name: "Frozen Yogurt",
+          calories: 159,
+          fat: 6.0,
+          carbs: 24,
+          protein: 4.0,
+          iron: "1%"
+        }
+      ]
+    },
+    coursePage:{
+      indoorList: [
         {
           title: "Full-Body",
           src: require('../public/img/card/full.jpg')
@@ -216,9 +229,8 @@ export default new Vuex.Store({
     getCarouselList: state => state.homePage.carouselList,
     getCourseList: state => state.homePage.courseList,
     getRecipeList: state => state.homePage.recipeList,
-    getIndoorList: state => state.homePage.indoorList,
-    getOutdoorList: state => state.homePage.outdoorList,
-    getNutritionList: state => state.recipePage.nutritionList,
     getInfoList: state => state.aboutPage.infoList,
+    getIndoorList: state => state.coursePage.indoorList,
+    getOutdoorList: state => state.coursePage.outdoorList,
   }
 })
