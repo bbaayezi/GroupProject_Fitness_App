@@ -13,13 +13,18 @@
             </v-tooltip>
           </v-toolbar>
           <v-card-text>
-            <v-form>
+            <v-form ref="form"
+             v-model="valid"
+             lazy-validation>
               <v-text-field
                 prepend-icon="person"
                 name="login"
                 label="Login"
                 type="text"
                 v-model="username"
+               :rules="nameRules"
+     
+               required
               ></v-text-field>
               <v-text-field
                 prepend-icon="lock"
@@ -27,13 +32,16 @@
                 label="Password"
                 type="password"
                 v-model="password"
+                :counter="16"
+                :rules="passwordRules"
+                required
               ></v-text-field>
             </v-form>
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn flat color="#757575" @click="register">Don't have a username?</v-btn>
-            <v-btn class="mx-3 white--text" color="#ffad33" @click.prevent="submitForm">Login</v-btn>
+            <v-btn :disabled="!valid" class="mx-3 white--text" color="#ffad33" @click.prevent="submitForm">Login</v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>
@@ -47,14 +55,26 @@ import axios from 'axios'
 export default {
   data() {
     return {
+      valid: true,
       username: "",
+      nameRules: [
+        v => !!v || 'Name is required',
+       
+      ],
       password: "",
+      passwordRules: [
+        v => !!v || 'password is required',
+        v => (v && v.length <= 16) || 'name must be less than 16 characters'
+      ],
     };
   },
   methods: {
     // 涉及异步方法，如以下提交表单方法时，使用 async await 语法糖
     // 可有效减轻Promise回调地狱的情况
     async submitForm() {
+       if (this.$refs.form.validate()) {
+          this.snackbar = true
+        }
       let res = await axios.post('http://localhost:3000/submitLogin', {
         username: this.username,
         password: this.password

@@ -179,6 +179,7 @@ export default new Vuex.Store({
         }
 
       ],
+      exerciseList:[1,2,3,5,7,8,9],
     },
     aboutPage:{
       infoList: [{
@@ -214,5 +215,6 @@ export default new Vuex.Store({
     getIndoorList: state => state.coursePage.indoorList,
     getOutdoorList: state => state.coursePage.outdoorList,
     getNutritionList: state => state.recipePage.nutritionList,
+    getExerciseList: state => state.recipePage.exerciseList,
   }
 })

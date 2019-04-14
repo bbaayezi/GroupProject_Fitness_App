@@ -34,6 +34,22 @@
       <v-radio label="User" value="User" ></v-radio>
       <v-radio label="Trainer" value="Trainer"></v-radio>
     </v-radio-group>
+        
+<v-text-field
+      v-model="height"
+      label="Height"
+      hint = "optional"
+    ></v-text-field>
+    <v-text-field
+      v-model="weight"
+      label="Weight"
+      hint = "optional"
+    ></v-text-field>
+    <v-text-field
+      v-model="age"
+      label="Age"
+      hint = "optional"
+    ></v-text-field>
     <v-checkbox
       v-model="checkbox"
       :rules="[v => !!v || 'You must agree to continue!']"
@@ -48,7 +64,7 @@
       submit
     </v-btn>
     <v-btn @click="clear">clear</v-btn>
-    </v-flex>
+</v-flex>
   </v-form>
   </v-content>
 </template>
@@ -95,7 +111,10 @@
             email: this.email,
             password: this.password,
             checkbox: this.checkbox,
-            gender: this.gender
+            gender: this.gender,
+            age: this.age,
+            height: this.height,
+            weight: this.weight
           })
           this.$router.push('login')
         }

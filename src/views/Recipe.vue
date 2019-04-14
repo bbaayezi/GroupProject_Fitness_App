@@ -1,11 +1,17 @@
 <template>
   <v-content>
+<<<<<<< HEAD
     <div class="display-3 font-weight-bold orange--text text-md-center">Recipe Recommendation</div>
     <br>
     <v-layout row justify-center>
         <v-flex xs2>
       <div class="display-1 font-weight-bold white--text light-green darken-1 text-md-center">Lose Weight<br></div>
     </v-flex>
+=======
+    <!-- <div class="display-3 font-weight-bold orange--text text-md-center">Recipe Recommendation</div><br> -->
+    <v-layout>
+     <DataIterator/>
+>>>>>>> refs/remotes/origin/ui
     </v-layout>
     <br>
     <v-layout justify-space-around row wrap>
