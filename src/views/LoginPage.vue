@@ -75,7 +75,7 @@ export default {
        if (this.$refs.form.validate()) {
           this.snackbar = true
         }
-      let res = await axios.post('http://localhost:3000/submitLogin', {
+      let res = await axios.post('http://test.scarlet-temp.tk/submitLogin', {
         username: this.username,
         password: this.password
       });
