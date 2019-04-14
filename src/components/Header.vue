@@ -11,8 +11,8 @@
     <v-btn flat @click="jump('course')">
       <span class="mx-2 white--text">Course</span>
     </v-btn>
-    <v-btn flat @click="jump('receipe')">
-      <span class="mx-2 white--text">Receipe</span>
+    <v-btn flat @click="jump('recipe')">
+      <span class="mx-2 white--text">Recipe</span>
     </v-btn>
 
     <v-btn v-if="getLoginStatus" flat @click="jump('about')">

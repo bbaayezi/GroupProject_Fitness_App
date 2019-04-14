@@ -9,7 +9,7 @@
             <div class="headline mb-0 text-md-center"><b>{{ title }}</b></div>
             <v-spacer></v-spacer>
             <v-card-actions>
-          <v-btn flat color="orange">VIEW</v-btn>
+          <v-btn flat color="orange" @click="jump">VIEW</v-btn>
         </v-card-actions>
         </v-card-title>
         
@@ -20,8 +20,9 @@
 export default {
     // 用于注册父子通信所需要的props
     // 用法和data类似，只是注册域不同
-    props: ['title', 'imgSrc']
-    
+    props: ['title', 'imgSrc'],
+    methods: {
+    }
 }
 </script>
 

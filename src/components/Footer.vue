@@ -42,7 +42,10 @@
         'fab fa-google-plus',
         'fab fa-linkedin',
         'fab fa-instagram'
-      ]
-    })
+      ],
+    }),
+    methods:{
+    }
+    
   }
 </script>
