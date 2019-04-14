@@ -46,6 +46,40 @@ export default new Vuex.Store({
           title: "Get Fit",
           src: require('../public/img/card/food3.jpg')
         }
+      ],indoorList: [
+        {
+          title: "Full-Body",
+          src: require('../public/img/card/full.jpg')
+        },
+        {
+          title: "Upper Body",
+          src: require('../public/img/card/upper.jpg')
+        },
+        {
+          title: "Lower Body",
+          src: require('../public/img/card/lower.jpg')
+        },
+        {
+          title: "Core",
+          src: require('../public/img/card/core.jpg')
+        }
+      ],outdoorList: [
+        {
+          title: "Skating",
+          src: require('../public/img/card/skating.jpg')
+        },
+        {
+          title: "Climbing",
+          src: require('../public/img/card/climbing.jpg')
+        },
+        {
+          title: "Swimming",
+          src: require('../public/img/card/swimming.jpg')
+        },
+        {
+          title: "Running",
+          src: require('../public/img/card/running.jpg')
+        }
       ],
       desserts: [
         {
@@ -88,6 +122,8 @@ export default new Vuex.Store({
     getCarouselList: state => state.homePage.carouselList,
     getCourseList: state => state.homePage.courseList,
     getRecipeList: state => state.homePage.recipeList,
+    getIndoorList: state => state.homePage.indoorList,
+    getOutdoorList: state => state.homePage.outdoorList,
     getInfoList: state => state.aboutPage.infoList,
   }
 })
