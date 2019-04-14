@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import LoginPage from './views/LoginPage.vue';
 import Home from './views/Home.vue';
+import Register from './views/Register.vue';
 
 // import mock data
 // in peoduction environment it will ve recieved from the server

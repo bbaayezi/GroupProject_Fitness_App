@@ -9,7 +9,7 @@
       <v-spacer></v-spacer>
       <v-btn
       flat
-        @click="jumpHome"
+      @click="jumpHome"
       >
         <span class="mx-2 white--text">Home</span>
       </v-btn>
