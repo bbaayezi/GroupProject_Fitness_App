@@ -11,12 +11,13 @@
     >
       <v-card-text>
         <v-btn
-          v-for="icon in icons"
-          :key="icon"
+          v-for="(item,index) in icons"
+          :key="icons[index].icon"
           class="mx-5 white--text"
           icon
+          @click="See(icons[index].link)"
         >
-          <v-icon size="36px">{{ icon }}</v-icon>
+          <v-icon size="36px">{{ icons[index].icon }}</v-icon>
         </v-btn>
       </v-card-text>
       <v-card-text class="subheading font-weight-medium white--text pt-0">
@@ -38,14 +39,23 @@
   export default {
     data: () => ({
       icons: [
-        'fab fa-twitter',
-        'fab fa-google-plus',
-        'fab fa-linkedin',
-        'fab fa-instagram'
+        {icon:'fab fa-twitter',link:'https://twitter.com/'},
+        {icon:'fab fa-google-plus',link:'https://plus.google.com/'},
+        {icon:'fab fa-linkedin',link:'https://www.linkedin.com/'},
+        {icon:'fab fa-instagram',link:'https://www.instagram.com/'}
+       // 'fab fa-twitter',
+        //'fab fa-google-plus',
+       // 'fab fa-linkedin',
+       // 'fab fa-instagram'
       ],
-    }),
-    methods:{
     }
+    ),
     
+    methods:{
+          See(e) {
+        window.location.href = e
+      }
+    }
+
   }
 </script>
