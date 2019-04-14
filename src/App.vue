@@ -9,21 +9,21 @@
       <v-spacer></v-spacer>
       <v-btn
       flat
-      @click="jumpHome"
+      @click="jump('home')"
       >
         <span class="mx-2 white--text">Home</span>
       </v-btn>
 
       <v-btn
       flat
-        @click="jumpAbout"
+        @click="jump('about')"
       >
-        <span class="mx-2 white--text">About</span>
+        <span class="mx-2 white--text">UserInfo</span>
       </v-btn>
 
       <v-btn v-if="loginStatus == false"
       flat
-        @click="jumpLogin"
+        @click="jump('login')"
       >
         <span class="mx-2 white--text">Login</span>
       </v-btn>
@@ -55,17 +55,8 @@ export default {
     Footer
   },
   methods: {
-        jumpAbout() {
-            this.$router.push('about')
-            // update state in Vuex
-        },
-        jumpLogin() {
-            this.$router.push('login')
-            this.loginStatus = true
-            // update state in Vuex
-        },
-        jumpHome() {
-            this.$router.push('home')
+        jump(name) {
+            this.$router.push(name)
             // update state in Vuex
         },
         jumpLogout() {
@@ -77,17 +68,4 @@ export default {
     }
 }
 </script>
-
-<style>
-ul,
-li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-li {
-  display: inline;
-  float: left;
-}
-</style>
 
