@@ -57,6 +57,19 @@ export default new Vuex.Store({
           iron: "1%"
         }
       ]
+    },
+    aboutPage:{
+      infoList: [{
+        ID: 123456,
+        name:"Mike",
+        age: 20,
+        gender: "Male",
+        height: 180,
+        weight: 120,
+        identity: "User",
+        img:"https://avataaars.io/?avatarStyle=Transparent&hairColor=orange&facialHairType=Blank&clotheType=Hoodie&clotheColor=red&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light",
+      },
+    ],
     }
   },
   mutations: {
@@ -77,5 +90,6 @@ export default new Vuex.Store({
     getCarouselList: state => state.homePage.carouselList,
     getCourseList: state => state.homePage.courseList,
     getRecipeList: state => state.homePage.recipeList,
+    getInfoList: state => state.aboutPage.infoList,
   }
 })
