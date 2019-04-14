@@ -7,6 +7,7 @@
     <v-layout row wrap>
       <v-flex v-for="(Info, id) in getInfoList" :key="id" xs12 sm8 md4 offset-xs1>
         <div class="display-1 font-weight-bold orange--text text-md-center">My Card</div>
+        <br><br><br>
         <InfoCard
           :ID="Info.ID"
           :name="Info.name"
