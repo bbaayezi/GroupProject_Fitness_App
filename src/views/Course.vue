@@ -8,7 +8,7 @@
         <Card :imgSrc="indoorCard.src" :title="indoorCard.title"/>
       </v-flex>
     </v-layout>
-    <br>
+    <br><br>
 
     <div class="display-3 font-weight-bold orange--text text-md-center">Outdoor</div><br>
     <v-layout justify-space-around row wrap>
