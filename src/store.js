@@ -232,5 +232,6 @@ export default new Vuex.Store({
     getInfoList: state => state.aboutPage.infoList,
     getIndoorList: state => state.coursePage.indoorList,
     getOutdoorList: state => state.coursePage.outdoorList,
+    getNutritionList: state => state.recipePage.nutritionList,
   }
 })
