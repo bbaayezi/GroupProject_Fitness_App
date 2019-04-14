@@ -8,6 +8,12 @@
     <v-btn flat @click="jump('home')">
       <span class="mx-2 white--text">Home</span>
     </v-btn>
+    <v-btn flat @click="jump('course')">
+      <span class="mx-2 white--text">Course</span>
+    </v-btn>
+    <v-btn flat @click="jump('receipe')">
+      <span class="mx-2 white--text">Receipe</span>
+    </v-btn>
 
     <v-btn flat @click="jump('about')">
       <span class="mx-2 white--text">userInfo</span>
