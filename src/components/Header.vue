@@ -5,12 +5,12 @@
       <span class="mx-3 white--text">MATERIAL DESIGN</span>
     </v-toolbar-title>
     <v-spacer></v-spacer>
-    <v-btn flat @click="jumpHome">
+    <v-btn flat @click="jump('home')">
       <span class="mx-2 white--text">Home</span>
     </v-btn>
 
-    <v-btn flat @click="jumpAbout">
-      <span class="mx-2 white--text">About</span>
+    <v-btn flat @click="jump('about')">
+      <span class="mx-2 white--text">userInfo</span>
     </v-btn>
 
     <v-btn flat @click="loginBtn">
@@ -28,12 +28,8 @@ export default {
     };
   },
   methods: {
-    jumpAbout() {
-      this.$router.push("about");
-      // update state in Vuex
-    },
-    jumpHome() {
-      this.$router.push("home");
+    jump(name) {
+      this.$router.push(name);
       // update state in Vuex
     },
     loginBtn() {

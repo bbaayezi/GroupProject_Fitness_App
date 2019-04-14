@@ -25,16 +25,3 @@ export default {
 };
 </script>
 
-<style>
-ul,
-li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-li {
-  display: inline;
-  float: left;
-}
-</style>
-
