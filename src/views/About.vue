@@ -28,12 +28,12 @@
         <RecordCard/>
       </v-flex>
 
-      <v-flex offset-md2>
-        <br><br><br><br><br><br>
+      <v-flex offset-xs1>
+        <br><br>
         <RecordTable/>
       </v-flex>
 
-      <v-flex>
+      <v-flex offset-xs2>
         <br><br>
         <!-- <div class="display-1 font-weight-bold orange--text">My Exercise Record</div> -->
         <Calendars/>
