@@ -1,6 +1,6 @@
 <template>
   <v-layout justify-space-between wrap>
-    <v-flex xs12 sm6 class="my-3">
+    <v-flex xs11 sm6 class="my-3">
       <v-date-picker v-model="date" event-color="green lighten-1" :events="functionEvents"></v-date-picker>
     </v-flex>
   </v-layout>

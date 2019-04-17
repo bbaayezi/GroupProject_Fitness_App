@@ -1,6 +1,6 @@
 <template>
   <v-layout justify-center>
-    <v-flex xs12 sm10 md8 lg6>
+    <v-flex xs10 sm12 md8>
       <v-card ref="form">
         <v-card-text>
           <v-text-field
