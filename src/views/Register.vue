@@ -26,15 +26,9 @@
      :rules="[v => !!v || 'Please select an option']"
           :items="genderList"
           v-model="gender"
-          label="Select"
+          label="Sex"
           required
         ></v-select>
-    <v-radio-group 
-              required
-    v-model="row" row>
-      <v-radio label="User" value="User" ></v-radio>
-      <v-radio label="Trainer" value="Trainer"></v-radio>
-    </v-radio-group>
         
 <v-text-field
       v-model="height"
