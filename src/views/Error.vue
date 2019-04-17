@@ -8,7 +8,7 @@
     </div>
     </v-layout>
     <v-layout class="justify-center">
-        <v-btn small color="error" @click="jump('home')">Go back</v-btn>
+        <v-btn small color="error" @click="jump">Go back</v-btn>
     </v-layout>
     
 </v-content>
@@ -18,9 +18,8 @@
 <script>
 export default {
     methods:{
-    jump(name) {
-      this.$store.dispatch("toggleUserView",{status: name});
-      this.$router.push(name);
+    jump() {
+      this.$router.push(this.$store.getters.getUserCurrentView);
       // update state in Vuex
       
     },
