@@ -17,6 +17,7 @@ export default new Vuex.Store({
       carouselList: [{
           title: '1',
           src: require('../public/img/card/banner1.jpg')
+          
         },
         {
           title: '2',
@@ -30,25 +31,30 @@ export default new Vuex.Store({
       courseList: [
         {
           title: "Indoor",
-          src: require('../public/img/card/indoor.jpg')
+          src: require('../public/img/card/indoor.jpg'),
+          link: 'course'
         },
         {
           title: "Outdoor",
-          src: require('../public/img/card/outdoor.png')
+          src: require('../public/img/card/outdoor.png'),
+          link: 'course'
         }
       ],
       recipeList: [
         {
           title: "Lose Weight",
-          src: require('../public/img/card/food1.jpg')
+          src: require('../public/img/card/food1.jpg'),
+          link: 'recipe'
         },
         {
           title: "Get Strong",
-          src: require('../public/img/card/food2.jpg')
+          src: require('../public/img/card/food2.jpg'),
+          link: 'recipe'
         },
         {
           title: "Get Fit",
-          src: require('../public/img/card/food3.jpg')
+          src: require('../public/img/card/food3.jpg'),
+          link: 'recipe'
         }
       ],
       desserts: [
@@ -66,7 +72,8 @@ export default new Vuex.Store({
       indoorList: [
         {
           title: "Full-Body",
-          src: require('../public/img/card/full.jpg')
+          src: require('../public/img/card/full.jpg'),
+          
         },
         {
           title: "Upper Body",

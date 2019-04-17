@@ -17,7 +17,7 @@
           icon
           @click="See(icons[index].link)"
         >
-        <v-tooltip v-model="show" top>
+        <v-tooltip top>
           <template v-slot:activator="{ on }">
             <v-btn icon v-on="on">
              <v-icon size="36px">{{ icons[index].icon }}</v-icon>
