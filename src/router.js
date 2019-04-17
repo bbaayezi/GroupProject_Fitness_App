@@ -52,6 +52,11 @@ const router = new Router({
       component: () => import('./views/Recipe.vue'),
     },
     {
+      path: '/summary',
+      name: 'summary',
+      component: () => import('./views/Summary.vue'),
+    },
+    {
       path: '/home',
       name: 'home',
       component: () => import('./views/Home.vue'),
