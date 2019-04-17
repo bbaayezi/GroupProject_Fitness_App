@@ -19,7 +19,7 @@
         <v-tooltip top>
           <template v-slot:activator="{ on }">
             <v-btn icon v-on="on">
-             <v-icon size="36px" color = "white">{{ icons[index].icon }}</v-icon>
+             <v-icon size="36px" color="white">{{ icons[index].icon }}</v-icon>
           </v-btn>
            </template>
           <span>{{icons[index].tip}}</span>

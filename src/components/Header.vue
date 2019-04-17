@@ -14,6 +14,9 @@
       <v-btn flat @click="jump('recipe')">
         <span class="mx-2 white--text"><v-icon>restaurant</v-icon></span>
       </v-btn>
+      <v-btn flat @click="jump('summary')">
+        <span class="mx-2 white--text"><v-icon>perm_identity</v-icon></span>
+      </v-btn>
     </div>
     <v-spacer></v-spacer>
 
