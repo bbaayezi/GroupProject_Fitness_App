@@ -17,7 +17,14 @@
           icon
           @click="See(icons[index].link)"
         >
-          <v-icon size="36px">{{ icons[index].icon }}</v-icon>
+        <v-tooltip v-model="show" top>
+          <template v-slot:activator="{ on }">
+            <v-btn icon v-on="on">
+             <v-icon size="36px">{{ icons[index].icon }}</v-icon>
+          </v-btn>
+           </template>
+          <span>{{icons[index].tip}}</span>
+        </v-tooltip>
         </v-btn>
       </v-card-text>
       <v-card-text class="subheading font-weight-medium white--text pt-0">
@@ -38,11 +45,12 @@
 <script>
   export default {
     data: () => ({
+      
       icons: [
-        {icon:'fab fa-twitter',link:'https://twitter.com/'},
-        {icon:'fab fa-google-plus',link:'https://plus.google.com/'},
-        {icon:'fab fa-linkedin',link:'https://www.linkedin.com/'},
-        {icon:'fab fa-instagram',link:'https://www.instagram.com/'}
+        {icon:'fab fa-twitter',link:'https://twitter.com/', tip:'twitter'},
+        {icon:'fab fa-google-plus',link:'https://plus.google.com/', tip:'google+'},
+        {icon:'fab fa-linkedin',link:'https://www.linkedin.com/', tip: 'linkedin'},
+        {icon:'fab fa-instagram',link:'https://www.instagram.com/', tip: 'instagram'}
        // 'fab fa-twitter',
         //'fab fa-google-plus',
        // 'fab fa-linkedin',
