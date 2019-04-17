@@ -9,6 +9,9 @@ export default new Vuex.Store({
       // check for login status
       isLoggedIn: false,
     },
+    navbar: {
+      drawerSwitch: null
+    },
     homePage: {
       carouselList: [{
           title: '1',
