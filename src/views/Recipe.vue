@@ -35,6 +35,7 @@
     </v-layout>
     <br>
     <br>
+>>>>>>> refs/remotes/origin/ui
   </v-content>
 </template>
 

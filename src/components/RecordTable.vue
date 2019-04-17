@@ -1,6 +1,6 @@
 <template>
   <v-layout row>
-    <v-flex xs12 sm8>
+    <v-flex xs11 sm10 md10>
       <v-card>
 
         <v-list two-line subheader>

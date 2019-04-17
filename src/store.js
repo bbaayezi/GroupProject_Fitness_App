@@ -1,13 +1,28 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import Vuetify from 'vuetify'
 
 Vue.use(Vuex)
+
+Vue.use(Vuetify, {
+  iconfont: 'mdi',
+  icons: {
+    'product': 'mdi-dropbox',
+    'support': 'mdi-lifebuoy',
+    'steam': 'mdi-steam-box',
+    'pc': 'mdi-desktop-classic',
+    'xbox': 'mdi-xbox',
+    'playstation': 'mdi-playstation',
+    'switch': 'mdi-nintendo-switch'
+  }
+})
 
 export default new Vuex.Store({
   state: {
     userStatus: {
       // check for login status
       isLoggedIn: false,
+      userCurrentView: 'home',
     },
     navbar: {
       drawerSwitch: null
@@ -202,11 +217,17 @@ export default new Vuex.Store({
   mutations: {
     switchLoginStatus(state, payload) {
       state.userStatus.isLoggedIn = payload.status
+    },
+    switchUserCurrentView(state,payload){
+      state.userStatus.userCurrentView = payload.status
     }
   },
   actions: {
     toggleLogin({commit}, payload) {
       commit('switchLoginStatus', payload)
+    },
+    toggleUserView({commit}, payload) {
+      commit('switchUserCurrentView', payload)
     }
   },
   getters: {
@@ -219,5 +240,6 @@ export default new Vuex.Store({
     getOutdoorList: state => state.coursePage.outdoorList,
     getNutritionList: state => state.recipePage.nutritionList,
     getExerciseList: state => state.recipePage.exerciseList,
+    getUserCurrentView: state => state.userStatus.userCurrentView
   }
 })
