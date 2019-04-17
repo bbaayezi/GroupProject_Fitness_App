@@ -20,8 +20,6 @@ export default {
     methods:{
     jump() {
       this.$router.push(this.$store.getters.getUserCurrentView);
-      // update state in Vuex
-      
     },
     }
 }

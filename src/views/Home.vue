@@ -6,7 +6,7 @@
     <div class="display-3 font-weight-bold orange--text text-md-center">Course</div><br>
     <v-layout justify-space-around row wrap>
       <v-flex v-for="(card, id) in getCourseList" :key="id" xs12 sm8 md4>
-        <Card :imgSrc="card.src" :title="card.title"/>
+        <Card :imgSrc="card.src" :title="card.title" :link="card.link"/>
       </v-flex>
     </v-layout>
     <br>
@@ -14,7 +14,7 @@
     <div class="display-3 font-weight-bold orange--text text-md-center">Recipe</div><br>
     <v-layout justify-space-around row wrap>
       <v-flex v-for="(card, id) in getRecipeList" :key="id" xs12 sm8 md3>
-        <Card :imgSrc="card.src" :title="card.title"/>
+        <Card :imgSrc="card.src" :title="card.title" :link="card.link"/>
       </v-flex>
     </v-layout>
     <!-- </table> -->
