@@ -1,5 +1,6 @@
 <template>
 <v-content>
+  <div class="display-1 font-weight-bold orange--text text-md-center">Register</div>
   <v-form ref="form" v-model="valid" lazy-validation>
    <v-flex xs10 offset-xs1>
     <v-text-field

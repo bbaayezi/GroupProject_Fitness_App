@@ -24,6 +24,8 @@
       label="Search"
       prepend-inner-icon="search"
       class="hidden-xs-only"
+      v-model = 'search'
+      @keyup.enter ="search1"
     ></v-text-field>
 
     <v-btn v-if="getLoginStatus" flat @click="jump('about')">
@@ -49,6 +51,36 @@ export default {
     };
   },
   methods: {
+    search1(){
+      var flag = false;
+      var arr1 = ['home','house','homepage','index']; 
+      var arr2 = ['course','about','full','lower','upper','core','body','indoor','outdoor','skating','climbing','swimming','running'];
+      var arr3 = ['recipe','weight','strong','fit'];
+      for(var i = 0;i<arr1.length;i++){
+        if(this.search.toLowerCase()==arr1[i]){
+          this.$store.dispatch("toggleUserView",{status: 'home'});
+          this.$router.push('home');
+          flag = true;
+        }
+      };
+       for(var i = 0;i<arr2.length;i++){
+        if(this.search.toLowerCase()==arr2[i]){
+          this.$store.dispatch("toggleUserView",{status: 'course'});
+          this.$router.push('course');
+          flag = true;
+        }
+      };
+      for(var i = 0;i<arr3.length;i++){
+        if(this.search.toLowerCase()==arr3[i]){
+          this.$store.dispatch("toggleUserView",{status: 'recipe'});
+          this.$router.push('recipe');
+          flag = true;
+        }
+      };
+      if(flag==false){
+        this.$router.push('error');
+      }
+    },
     openDrawer() {
       this.$emit("drawer-click");
     },
