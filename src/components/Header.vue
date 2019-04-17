@@ -1,7 +1,7 @@
 <template>
   <v-toolbar app color="#ffad33">
     <v-toolbar-title class="headline text-uppercase">
-      <span class="mx-3 white--text">Vuetify</span>
+      <span class="mx-3 white--text">{{getUserCurrentView}}</span>
     </v-toolbar-title>
     
     <v-spacer></v-spacer>
@@ -43,6 +43,7 @@ export default {
   data() {
     return {
       isLogedIn: this.$store.getters.getLoginStatus,
+      userCurrentView: this.$store.getters.getUserCurrentView,
       drawer: null
     };
   },
@@ -51,8 +52,10 @@ export default {
       this.$emit("drawer-click");
     },
     jump(name) {
+      this.$store.dispatch("toggleUserView",{status: name});
       this.$router.push(name);
       // update state in Vuex
+      
     },
     loginBtn() {
       if (this.$store.getters.getLoginStatus) {
@@ -67,7 +70,8 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(["getLoginStatus"])
+    ...mapGetters(["getLoginStatus"]),
+    ...mapGetters(["getUserCurrentView"])
   }
 };
 </script>

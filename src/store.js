@@ -8,6 +8,7 @@ export default new Vuex.Store({
     userStatus: {
       // check for login status
       isLoggedIn: false,
+      userCurrentView: 'home',
     },
     navbar: {
       drawerSwitch: null
@@ -202,11 +203,17 @@ export default new Vuex.Store({
   mutations: {
     switchLoginStatus(state, payload) {
       state.userStatus.isLoggedIn = payload.status
+    },
+    switchUserCurrentView(state,payload){
+      state.userStatus.userCurrentView = payload.status
     }
   },
   actions: {
     toggleLogin({commit}, payload) {
       commit('switchLoginStatus', payload)
+    },
+    toggleUserView({commit}, payload) {
+      commit('switchUserCurrentView', payload)
     }
   },
   getters: {
@@ -219,5 +226,6 @@ export default new Vuex.Store({
     getOutdoorList: state => state.coursePage.outdoorList,
     getNutritionList: state => state.recipePage.nutritionList,
     getExerciseList: state => state.recipePage.exerciseList,
+    getUserCurrentView: state => state.userStatus.userCurrentView
   }
 })
