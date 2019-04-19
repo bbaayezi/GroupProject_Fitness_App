@@ -1,7 +1,45 @@
 <template>
 <v-content>
-  <v-container fluid fill-height>
-    <v-layout bg :style="note">
+  <div class="hidden-sm-and-up px-2 pt-3">
+    <v-layout justify-center>
+      <div >
+      <p>SIGN IN WITH USERNAME</p>
+    </div>
+    </v-layout>
+    
+     <v-form ref="form" v-model="valid" lazy-validation>
+              <v-text-field
+                prepend-icon="person"
+                name="login"
+                label="Login"
+                type="text"
+                v-model="username"
+                :rules="nameRules"
+                required
+              ></v-text-field>
+              <v-text-field
+                prepend-icon="lock"
+                name="password"
+                label="Password"
+                type="password"
+                v-model="password"
+                :counter="16"
+                :rules="passwordRules"
+                required
+              ></v-text-field>
+               <v-btn  block flat color="#757575" @click="register">Don't have a username?</v-btn>
+            <v-btn
+            block
+              :disabled="!valid"
+              class= "white--text"
+              color="#ffad33"
+              @click.prevent="submitForm"
+            >Login</v-btn>
+            </v-form>
+           
+  </div>
+  <v-container fluid fill-height class="hidden-sm-and-down">
+    <v-layout bg :style="note"  >
     </v-layout>
     <v-layout align-center justify-center class="content-front">
     <v-layout align-center content-front white--text>
