@@ -15,8 +15,10 @@
       methods:{
         handleScroll () {
           this.scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-          if(this.scrollTop>500){
+          if(this.scrollTop>300){
             this.goTopShow=true
+          }else{
+              this.goTopShow=false;
           }
         },
         goTop(){
