@@ -14,9 +14,6 @@
       <v-btn flat @click="jump('recipe')">
         <span class="mx-2 white--text"><v-icon>restaurant</v-icon></span>
       </v-btn>
-      <v-btn flat @click="jump('summary')" v-if = "getLoginStatus">
-        <span class="mx-2 white--text"><v-icon>perm_identity</v-icon></span>
-      </v-btn>
     </div>
     <v-spacer></v-spacer>
 
@@ -31,7 +28,7 @@
       @keyup.enter ="search1"
     ></v-text-field>
 
-    <v-btn v-if="getLoginStatus" flat @click="jump('about')">
+    <v-btn v-if="getLoginStatus" flat @click="jump('summary')">
       <span class="mx-2 white--text"><v-icon>perm_identity</v-icon></span>
     </v-btn>
 
