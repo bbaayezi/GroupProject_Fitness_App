@@ -125,8 +125,8 @@
         <v-flex xs12 mt-3>
           <md-card>
             <md-card-header data-background-color="orange">
-              <div class="display-2">Nutrition Table</div>
-              <p class="category display-1">Here is the nutrition list for the selected category</p>
+              <h4 class="title">Nutrition Table</h4>
+              <p class="category">Here is the nutrition list for the selected category</p>
             </md-card-header>
             <md-card-content>
               <ordered-table table-header-color="orange"></ordered-table>
