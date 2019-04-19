@@ -38,8 +38,6 @@
     <v-btn flat @click="loginBtn">
       <span class="mx-2 white--text">{{ getLoginStatus ? "LogOut" : "Login" }}</span>
     </v-btn>
-
-    <v-toolbar-side-icon class="hidden-md-and-up white--text" @click.stop="openDrawer"></v-toolbar-side-icon>
   </v-toolbar>
 </template>
 
@@ -83,9 +81,6 @@ export default {
       if(flag==false){
         this.$router.push('error');
       }
-    },
-    openDrawer() {
-      this.$emit("drawer-click");
     },
     jump(name) {
       this.$store.dispatch("toggleUserView",{status: name});

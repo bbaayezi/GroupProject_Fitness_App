@@ -1,17 +1,9 @@
 <template>
   <v-app>
-    <Header @drawer-click="toggleDrawer"/>
-    <v-navigation-drawer
-      v-model="drawer"
-      temporary
-      right
-      clipped
-      app
-    >
-      <DrawerList/>
-    </v-navigation-drawer>
+    <Header/>
     <router-view></router-view>
-    <Footer/>
+    <DrawerList fixed class="hidden-md-and-up white--text"/>
+    <Footer class="hidden-sm-and-down white--text"/>
   </v-app>
 </template>
 
@@ -30,9 +22,6 @@ export default {
     };
   },
   methods: {
-    toggleDrawer() {
-      this.drawer = !this.drawer;
-    }
   },
   components: {
     Footer,
