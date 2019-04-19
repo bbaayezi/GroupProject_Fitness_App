@@ -71,11 +71,6 @@ export default new Vuex.Store({
     coursePage:{
       indoorList: [
         {
-          title: "Full-Body",
-          src: require('../public/img/card/full.jpg'),
-          
-        },
-        {
           title: "Upper Body",
           src: require('../public/img/card/upper.jpg')
         },
@@ -100,10 +95,6 @@ export default new Vuex.Store({
           title: "Swimming",
           src: require('../public/img/card/swimming.jpg')
         },
-        {
-          title: "Running",
-          src: require('../public/img/card/running.jpg')
-        }
       ]
     },
     recipePage:{
