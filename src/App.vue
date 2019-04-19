@@ -4,6 +4,7 @@
     <router-view></router-view>
     <DrawerList fixed class="hidden-md-and-up white--text"/>
     <Footer class="hidden-sm-and-down white--text"/>
+    <v-goTop></v-goTop>
   </v-app>
 </template>
 
@@ -11,7 +12,7 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import DrawerList from "./components/DrawerList";
-
+import goTop from "./components/BackTop";
 export default {
   name: "App",
   data() {
@@ -26,7 +27,8 @@ export default {
   components: {
     Footer,
     Header,
-    DrawerList
+    DrawerList,
+     'v-goTop': goTop
   }
 };
 </script>
