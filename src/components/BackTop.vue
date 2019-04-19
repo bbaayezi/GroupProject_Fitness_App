@@ -50,7 +50,8 @@
     bottom: 50px;
     width: 50px;
     height: 50px;
-    background:rgba(0,0,0,.65);
+    z-index: 999999;
+    background:rgba(0, 0, 0, 0.65);
   }
   .goTop:hover{
     background:rgba(0,0,0,.85);
