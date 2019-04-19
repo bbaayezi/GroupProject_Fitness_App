@@ -196,8 +196,9 @@ export default new Vuex.Store({
         img:"https://avataaars.io/?avatarStyle=Transparent&hairColor=orange&facialHairType=Blank&clotheType=Hoodie&clotheColor=red&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light",
       },
     ],
-    }
+    },
   },
+  
   mutations: {
     switchLoginStatus(state, payload) {
       state.userStatus.isLoggedIn = payload.status
