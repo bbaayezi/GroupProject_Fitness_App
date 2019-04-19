@@ -31,9 +31,11 @@
   </v-card>
 </template>
 <script>
+import { mapGetters } from "vuex";
   export default {
     data () {
       return {
+        isLogedIn: this.$store.getters.getLoginStatus,
         bottomNav: 3
       }
     },
@@ -47,6 +49,8 @@
     },
 
     computed: {
+    ...mapGetters(["getLoginStatus"]),
+    ...mapGetters(["getUserCurrentView"]),
       color () {
         switch (this.bottomNav) {
           case 0: return 'blue-grey'
