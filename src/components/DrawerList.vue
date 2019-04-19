@@ -23,7 +23,7 @@
         <v-icon>restaurant</v-icon>
       </v-btn>
 
-      <v-btn dark flat @click="jump('about')">
+      <v-btn dark flat @click="jump('summary')" v-if = "getLoginStatus">
         <span>UserInfo</span>
         <v-icon>perm_identity</v-icon>
       </v-btn>
