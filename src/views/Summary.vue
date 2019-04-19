@@ -209,6 +209,6 @@ export default {
     UserCard,
     Calendars,
     TrainerTable
-  }
+  },
 }
 </script>
