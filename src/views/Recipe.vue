@@ -1,143 +1,105 @@
 <template>
   <v-content>
-    <div class="display-3 font-weight-bold orange--text text-md-center">Recipe Recommendation</div>
-    <br>
-    <v-layout row justify-space-around>
-      <v-flex xs10 md2 lg5>
-        <div class="display-1 font-weight-bold white--text light-green darken-1 text-md-center">
-          Lose Weight
-          <br>
-        </div>
-      </v-flex>
-    </v-layout>
-    <br>
-    <v-layout justify-space-around row wrap>
-      <DataTable/>
-    </v-layout>
-    <br>
-    <br>
-    <v-layout row justify-space-around>
-      <v-flex xs10 md2 lg5>
-        <div
-          class="display-1 font-weight-bold white--text light-green darken-1 text-md-center"
-        >Get Strong</div>
-      </v-flex>
-    </v-layout>
-    <br>
-    <v-layout justify-space-around row wrap>
-      <DataTable/>
-    </v-layout>
-    <br>
-    <br>
-    <v-layout row justify-space-around>
-      <v-flex xs10 md2 lg5>
-        <div
-          class="display-1 font-weight-bold white--text light-green darken-1 text-md-center"
-        >Get Fit</div>
-      </v-flex>
-    </v-layout>
-    <br>
-    <v-layout justify-space-around row wrap>
-      <DataTable/>
-    </v-layout>
-    <br>
-    <v-layout xs12 md5 justify-space-around>
-      <material-card color="green" title="Simple Table" text="Here is a subtitle for this table">
-        <v-data-table :headers="headers" :items="items" hide-actions>
-          <template slot="headerCell" slot-scope="{ header }">
-            <span
-              class="subheading font-weight-light text-success text--darken-3"
-              v-text="header.text"
-            />
-          </template>
-          <template slot="items" slot-scope="{ item }">
-            <td>{{ item.name }}</td>
-            <td>{{ item.country }}</td>
-            <td>{{ item.city }}</td>
-            <td class="text-xs-right">{{ item.salary }}</td>
-          </template>
-        </v-data-table>
-      </material-card>
-    </v-layout>
+    <v-container grid-list-md fluid>
+      <v-layout row wrap>
+        <v-flex xs12 md6>
+          <v-card>
+            <v-img
+              src="https://cdn-image.foodandwine.com/sites/default/files/styles/medium_2x/public/buying-healthy-foods-ft-blog0617.jpg?itok=fdrZyzB6"
+              :aspect-ratio="isMobile ? 1.7 : 0.64"
+            ></v-img>
+            <v-card-title primary-title>
+              <div class="display-2">Vegetables</div>
+              <v-spacer></v-spacer>
+              <v-card-actions>
+                <v-btn color="orange" flat>DETAIL</v-btn>
+              </v-card-actions>
+            </v-card-title>
+          </v-card>
+        </v-flex>
+        <v-flex xs12 md6>
+          <v-layout row wrap>
+            <v-flex xs12>
+              <v-card>
+                <v-img
+                  src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/super-food-for-healthy-eating-royalty-free-image-928553584-1549508731.jpg"
+                  :aspect-ratio="isMobile ? 1.7 : 1.5"
+                ></v-img>
+                <v-card-title primary-title>
+                  <div class="display-2">Fruits</div>
+                  <v-spacer></v-spacer>
+                  <v-card-actions>
+                    <v-btn color="orange" flat>DETAIL</v-btn>
+                  </v-card-actions>
+                </v-card-title>
+              </v-card>
+            </v-flex>
+            <v-flex xs12>
+              <v-card>
+                <v-img
+                  src="https://stateofmind13.files.wordpress.com/2012/04/raw-meat.jpg"
+                  :aspect-ratio="isMobile ? 1.7 : 1.5"
+                ></v-img>
+                <v-card-title primary-title>
+                  <div class="display-2">Meats</div>
+                  <v-spacer></v-spacer>
+                  <v-card-actions>
+                    <v-btn color="orange" flat>DETAIL</v-btn>
+                  </v-card-actions>
+                </v-card-title>
+              </v-card>
+            </v-flex>
+          </v-layout>
+        </v-flex>
+        <v-flex xs12>
+          <v-card>
+            <v-img src="https://www.rd.com/wp-content/uploads/2018/06/healthy-food.jpg"></v-img>
+            <v-card-title primary-title>
+              <div class="display-2">Diet</div>
+              <v-spacer></v-spacer>
+              <v-card-actions>
+                <v-btn color="orange" flat>DETAIL</v-btn>
+              </v-card-actions>
+            </v-card-title>
+          </v-card>
+        </v-flex>
+
+        <v-flex xs12 mt-3>
+          <md-card>
+            <md-card-header data-background-color="orange">
+              <div class="display-2">Nutrition Table</div>
+              <p class="category display-1">Here is the nutrition list for the selected category</p>
+            </md-card-header>
+            <md-card-content>
+              <ordered-table table-header-color="orange"></ordered-table>
+            </md-card-content>
+          </md-card>
+        </v-flex>
+      </v-layout>
+    </v-container>
     <br>
   </v-content>
 </template>
-
 <script>
-import { mapGetters } from "vuex";
-import DataTable from "../components/DataTable";
-
 export default {
-  data() {
-    return {
-      headers: [
-        {
-          sortable: false,
-          text: "Name",
-          value: "name"
-        },
-        {
-          sortable: false,
-          text: "Country",
-          value: "country"
-        },
-        {
-          sortable: false,
-          text: "City",
-          value: "city"
-        },
-        {
-          sortable: false,
-          text: "Salary",
-          value: "salary",
-          align: "right"
-        }
-      ],
-      items: [
-        {
-          name: "Dakota Rice",
-          country: "Niger",
-          city: "Oud-Tunrhout",
-          salary: "$35,738"
-        },
-        {
-          name: "Minerva Hooper",
-          country: "Curaçao",
-          city: "Sinaai-Waas",
-          salary: "$23,738"
-        },
-        {
-          name: "Sage Rodriguez",
-          country: "Netherlands",
-          city: "Overland Park",
-          salary: "$56,142"
-        },
-        {
-          name: "Philip Chanley",
-          country: "Korea, South",
-          city: "Gloucester",
-          salary: "$38,735"
-        },
-        {
-          name: "Doris Greene",
-          country: "Malawi",
-          city: "Feldkirchen in Kārnten",
-          salary: "$63,542"
-        },
-        {
-          name: "Mason Porter",
-          country: "Chile",
-          city: "Gloucester",
-          salary: "$78,615"
-        }
-      ]
-    };
+  data: () => ({
+    isMobile: false
+  }),
+  beforeDestroy() {
+    if (typeof window !== "undefined") {
+      window.removeEventListener("resize", this.onResize, { passive: true });
+    }
   },
-  components: {
-    DataTable
+
+  mounted() {
+    this.onResize();
+    window.addEventListener("resize", this.onResize, { passive: true });
   },
-  computed: {
-    ...mapGetters(["getNutritionList"])
+
+  methods: {
+    onResize() {
+      this.isMobile = window.innerWidth < 960;
+    }
   }
 };
 </script>

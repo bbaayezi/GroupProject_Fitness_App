@@ -48,7 +48,8 @@ export default {
     return {
       isLogedIn: this.$store.getters.getLoginStatus,
       userCurrentView: this.$store.getters.getUserCurrentView,
-      drawer: null
+      drawer: null,
+      search: ""
     };
   },
   methods: {
