@@ -1,8 +1,11 @@
 <template>
   <v-content>
     <v-layout row wrap justify-space-around>
+      <div class="mt-5 md-layout-item md-medium-size-100 md-size-100">
+        <user-card></user-card>
+      </div>
       <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-33"
+        class="md-layout-item md-medium-size-33 md-xsmall-size-100 md-size-33"
       >
         <chart-card
           :chart-data="dailySalesChart.data"
@@ -29,7 +32,7 @@
         </chart-card>
       </div>
       <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-33"
+        class="md-layout-item md-medium-size-33 md-xsmall-size-100 md-size-33"
       >
         <chart-card
           :chart-data="emailsSubscriptionChart.data"
@@ -54,7 +57,7 @@
         </chart-card>
       </div>
       <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-33"
+        class="md-layout-item md-medium-size-33 md-xsmall-size-100 md-size-33"
       >
         <chart-card
           :chart-data="dataCompletedTasksChart.data"
@@ -77,15 +80,42 @@
           </template>
         </chart-card>
       </div>
+      <div
+        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
+      >
+        <nav-tabs-card>
+          <template slot="content">
+            <span class="md-nav-tabs-title">Tasks:</span>
+            <md-tabs md-sync-route class="md-success" md-alignment="left">
+              <md-tab id="tab-home" md-label="Bugs" md-icon="bug_report">
+                <nav-tabs-table></nav-tabs-table>
+              </md-tab>
+
+              <md-tab id="tab-pages" md-label="Website" md-icon="code">
+                <nav-tabs-table></nav-tabs-table>
+              </md-tab>
+
+              <md-tab id="tab-posts" md-label="server" md-icon="cloud">
+                <nav-tabs-table></nav-tabs-table>
+              </md-tab>
+            </md-tabs>
+          </template>
+        </nav-tabs-card>
+      </div>
       <div class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50">
-        <simple-table>
-        </simple-table>
+        <trainer-table></trainer-table>
+      </div>
+      <div class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-100">
+        <calendars/>
       </div>
     </v-layout>
   </v-content>
 </template>
 
 <script>
+import UserCard from "@/components/UserCard";
+import Calendars from "@/components/Calendars";
+import TrainerTable from "@/components/TrainerTable";
 export default {
   data() {
     return {
@@ -174,6 +204,11 @@ export default {
         ]
       }
     };
+  },
+  components: {
+    UserCard,
+    Calendars,
+    TrainerTable
   }
 }
 </script>

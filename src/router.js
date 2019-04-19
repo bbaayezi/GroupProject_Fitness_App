@@ -37,11 +37,11 @@ const router = new Router({
       name: 'Register',
       component: () => import('./views/Register.vue'),
     },
-    {
-      path: '/about',
-      name: 'about',
-      component: () => import('./views/About.vue'),
-    },
+    // {
+    //   path: '/about',
+    //   name: 'about',
+    //   component: () => import('./views/About.vue'),
+    // },
     {
       path: '/course',
       name: 'course',

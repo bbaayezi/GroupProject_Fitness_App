@@ -1,5 +1,8 @@
-import DropDown from "./components/Dropdown.vue";
-import ChartCard from "./components/Cards/ChartCard.vue";
+import DropDown from "./components/Dropdown";
+import ChartCard from "./components/Cards/ChartCard";
+import NavTabsCard from "./components/Cards/NavTabsCard";
+import NavTabsTable from "./components/Tables/NavTabsTable";
+import OrderedTable from "./components/Tables/OrderedTable";
 import SimpleTable from "./components/Tables/SimpleTable.vue";
 
 /**
@@ -10,6 +13,9 @@ const GlobalComponents = {
   install(Vue) {
     Vue.component("drop-down", DropDown);
     Vue.component("chart-card", ChartCard);
+    Vue.component("nav-tabs-card", NavTabsCard);
+    Vue.component("nav-tabs-table", NavTabsTable);
+    Vue.component("ordered-table", OrderedTable);
     Vue.component("simple-table", SimpleTable);
   }
 };
