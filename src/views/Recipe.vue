@@ -159,7 +159,7 @@ export default {
       this.isMobile = window.innerWidth < 960;
     },
      goAnchor() {
-       document.documentElement.scrollTop = 1500;
+       document.getElementById("tiaozhuan").scrollIntoView();
         },
   }
 };
