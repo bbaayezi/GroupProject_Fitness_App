@@ -8,10 +8,13 @@ import Chartist from "chartist"
 import GlobalComponents from './libs/vue-material-dashboard/globalComponents'
 import MaterialDashboard from './libs/vue-material-dashboard/material-dashboard'
 
+import axios from 'axios';
+
 Vue.config.productionTip = false
 // register
 Vue.use(GlobalComponents);
 Vue.use(MaterialDashboard);
+Vue.prototype.$axios = axios;
 Vue.prototype.$Chartist = Chartist;
 
 new Vue({

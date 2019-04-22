@@ -8,7 +8,7 @@
       shift
       fixed
     >
-      <v-btn dark flat @click="jump('home')">
+      <v-btn dark flat @click="jump('home')" v-if="!getLoginStatus">
         <span>Home</span>
         <v-icon>home</v-icon>
       </v-btn>

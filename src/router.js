@@ -27,11 +27,11 @@ const router = new Router({
       // },
       component: Home,
     },
-    {
-      path: '/login',
-      name: 'login',
-      component: LoginPage
-    },
+    // {
+    //   path: '/login',
+    //   name: 'login',
+    //   component: LoginPage
+    // },
     {
       path: '/Register',
       name: 'Register',
@@ -69,9 +69,9 @@ const router = new Router({
       children: [
         
       ],
-      meta: {
-        requireAuth: true
-      }
+      // meta: {
+      //   requireAuth: true
+      // }
     }
   ]
 })
