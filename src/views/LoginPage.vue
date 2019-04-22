@@ -6,7 +6,6 @@
       <p>SIGN IN WITH USERNAME</p>
     </div>
     </v-layout>
-    
      <v-form ref="form" v-model="valid" lazy-validation>
               <v-text-field
                 prepend-icon="person"
@@ -35,8 +34,7 @@
               color="#ffad33"
               @click.prevent="submitForm"
             >Login</v-btn>
-            </v-form>
-           
+            </v-form> 
   </div>
   <v-container fluid fill-height class="hidden-sm-and-down">
     <v-layout bg :style="note"  >
