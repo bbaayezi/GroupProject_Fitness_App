@@ -14,7 +14,7 @@
             <div class="hover01">
             <figure>
             <v-img
-              src="https://www.hel-theeliving.com/wp-content/uploads/2017/09/1636-Top-10-Weight-Loss-Machines-You-Should-Try-Out-ss.jpg"
+              src="https://www.johnsonfitness.com/blog/app/uploads/2017/11/Jfit-Blog-elliptical.jpg"
               :aspect-ratio="isMobile ? 1.7 : 0.64"
             >
             
@@ -172,7 +172,7 @@
                   <div class="display-2">Swimming</div>
                   <v-spacer></v-spacer>
                   <v-card-actions>
-                    <v-btn color="blue" flat>DETAIL</v-btn>
+                    <v-btn color="orange" flat>DETAIL</v-btn>
                   </v-card-actions>
                 </v-card-title>
               </v-card>
