@@ -126,6 +126,51 @@ export default {
           protein: "53.4 grams",
           water: "40%"
         },
+        {
+          Name: "Minty roast veg & hummus salad",
+          Calories: "611 kcal",
+          Fat: "26 g",
+          Carbohydrate: "61 g",
+          Fibre: "20 g",
+          Protein: "23 g",
+          Salt: "3.5g"
+        },
+        {
+          Name: "Spanish meatball & butter bean stew",
+          Calories: "435 kcal",
+          Fat: "15 g",
+          Carbohydrate: "35 g",
+          Fibre: "12 g",
+          Protein: "33 g",
+          Salt: "1.3 g"
+        },
+        {
+          Name: "Smoky hake, beans & greens",
+          Calories: "554 kcal",
+          Fat: "27 g",
+          Carbohydrate: "28 g",
+          Fibre: "6 g",
+          Protein: "45 g",
+          Salt: "2.2 g"
+        },
+        {
+          Name: "Spicy roast veg & lentils",
+          Calories: "321 kcal",
+          Fat: "12 g",
+          Carbohydrate: "38 g",
+          Fibre: "11 g",
+          Protein: "10 g",
+          Salt: "0.6 g"
+        },
+        {
+          Name: "Mushroom fajitas with avocado hummus",
+          Calories: "824 kcal",
+          Fat: "36 g",
+          Carbohydrate: "104 g",
+          Fibre: "14 g",
+          Protein: "23 g",
+          Salt: "2.3 g"
+        },
       ]
     };
   }
