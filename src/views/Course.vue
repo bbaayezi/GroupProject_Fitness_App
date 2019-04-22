@@ -1,6 +1,9 @@
 <template>
 
   <v-content>
+    <br>
+ <v-subheader inset><div class = "headline orange--text" >Indoor</div></v-subheader>
+ <v-divider inset></v-divider> 
     <v-container grid-list-md fluid>
       <v-layout row wrap>
         <v-flex xs12 md6>
@@ -79,6 +82,7 @@
             </v-flex>
           </v-layout>
         </v-flex>
+
         <v-flex xs12>
         
            <v-card>
@@ -98,7 +102,13 @@
           </v-card>
           
         </v-flex>
+</v-layout>
+</v-container>
 
+ <v-subheader inset><div class = "headline orange--text" >Outdoor</div></v-subheader>
+ <v-divider inset></v-divider> 
+<v-container grid-list-md fluid>
+<v-layout row wrap>
 <v-flex xs12 md6>
         
            <v-card>
@@ -190,7 +200,6 @@
           
         </v-flex>
       </v-layout>
-      
     </v-container>
     <br>
   </v-content>
@@ -243,4 +252,12 @@ export default {
 	-webkit-transform: scale(1.3);
 	transform: scale(1.3);
 }
+.style-two {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+}
+.line_05{letter-spacing:-1px;color:#ddd}
+.line_05 span{letter-spacing:0;color:#222;margin:0 20px}
+
 </style>
