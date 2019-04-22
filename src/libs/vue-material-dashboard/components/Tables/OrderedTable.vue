@@ -65,7 +65,8 @@ export default {
           calories: "297 kcal / 100 g",
           fat: "20.8 grams / 100 g",
           protein: "25.7 grams",
-          vitamin: "Vitamin C: 306% RDA Vitamin B6: 8% RDA"
+          vitamin: "Vitamin C: 306% RDA Vitamin B6: 8% RDA",
+          water: "53%"
         },{
           name: "Strawberry",
           calories: "39 cal / 100 g",
@@ -96,6 +97,34 @@ export default {
           moisture_content: "85 grams / 100 g",
           cellulose: "1.7 grams",
           vitamin: "Vitamin A: 134 IU Vitamin C: 74.0 mg"
+        },
+        {
+          name: "Beef",
+          calories: "217 kcal / 100 g",
+          fat: "11.8 grams / 100 g",
+          protein: "26.1 grams",
+          water: "61%"
+        },
+        {
+          name: "Lamb",
+          calories: "258 kcal / 100 g",
+          fat: "16.5 grams / 100 g",
+          protein: "25.6 grams",
+          water: "57%"
+        },
+        {
+          name: "Salmon",
+          calories: "155 kcal / 100 g",
+          fat: "6.9 grams / 100 g",
+          protein: "21.6 grams",
+          water: "65%"
+        },
+        {
+          name: "Chicken",
+          calories: "284 kcal / 100 g",
+          fat: "6.2 grams / 100 g",
+          protein: "53.4 grams",
+          water: "40%"
         },
       ]
     };
