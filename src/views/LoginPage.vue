@@ -37,47 +37,6 @@
         >Login</v-btn>
       </v-form>
     </div>
-<<<<<<< HEAD
-    </v-layout>
-     <v-form ref="form" v-model="valid" lazy-validation>
-              <v-text-field
-                prepend-icon="person"
-                name="login"
-                label="Login"
-                type="text"
-                v-model="username"
-                :rules="nameRules"
-                required
-              ></v-text-field>
-              <v-text-field
-                prepend-icon="lock"
-                name="password"
-                label="Password"
-                type="password"
-                v-model="password"
-                :counter="16"
-                :rules="passwordRules"
-                required
-              ></v-text-field>
-               <v-btn  block flat color="#757575" @click="register">Don't have a username?</v-btn>
-            <v-btn
-            block
-              :disabled="!valid"
-              class= "white--text"
-              color="#ffad33"
-              @click.prevent="submitForm"
-            >Login</v-btn>
-            </v-form> 
-  </div>
-  <v-container fluid fill-height class="hidden-sm-and-down">
-    <v-layout bg :style="note"  >
-    </v-layout>
-    <v-layout align-center justify-center class="content-front">
-    <v-layout align-center content-front white--text>
-      <v-flex offset-md2>
-      <div class = "display-3 font-weight-bold wordColor ">how to build <v-spacer/> your body?</div>
-      </v-flex>
-=======
     <v-container fluid fill-height class="hidden-sm-and-down">
       <v-layout bg :style="note"></v-layout>
       <v-layout align-center justify-center class="content-front">
@@ -92,7 +51,6 @@
         <v-flex xs12 sm8 md4 offset-md5>
           <login-form></login-form>
         </v-flex>
->>>>>>> refs/remotes/origin/ui
       </v-layout>
     </v-container>
   </v-content>
