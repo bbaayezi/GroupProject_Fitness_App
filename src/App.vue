@@ -2,6 +2,7 @@
   <v-app>
     <Header/>
     <router-view></router-view>
+    <br>
     <DrawerList fixed class="hidden-md-and-up white--text"/>
     <Footer class="hidden-sm-and-down white--text"/>
     <v-goTop></v-goTop>
