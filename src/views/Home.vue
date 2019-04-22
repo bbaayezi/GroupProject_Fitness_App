@@ -33,7 +33,10 @@
         </v-card>
       </v-flex>
     </v-layout>-->
-    <div class="display-3 font-weight-bold orange--text text-md-center mt-5">Course</div>
+    <br>
+    <br>
+     <v-subheader inset><div class = "display-1 font-weight-bold orange--text" >Course</div></v-subheader>
+     <v-divider inset></v-divider> 
     <br>
     <v-layout justify-space-around row wrap>
       <v-flex v-for="(card, id) in getCourseList" :key="id" xs12 sm6 md5>
@@ -42,7 +45,9 @@
     </v-layout>
     <br>
 
-    <div class="display-3 font-weight-bold orange--text text-md-center">Recipe</div>
+    <br>
+     <v-subheader inset><div class = "display-1 font-weight-bold orange--text" >Recipe</div></v-subheader>
+     <v-divider inset></v-divider> 
     <br>
     <v-layout justify-space-around row wrap>
       <v-flex v-for="(card, id) in getRecipeList" :key="id" xs12 sm4 md4>
