@@ -77,19 +77,19 @@ export default {
           calories: "46 cal / 100 g",
           moisture_content: "87 g / 100 g",
           fibre: "1.4 g",
-          vitamin: "Vitamin A: 17 IU Vitamin C: 9.0 mg"
+          vitamin: "Vitamin A: 17 IU; Vitamin C: 9.0 mg"
         },{
           name: "Apple",
           calories: "50 cal / 100 g",
           moisture_content: "86 g / 100 g",
           fibre: "1.6 g",
-          vitamin: "Vitamin A: 13 IU Vitamin C: 2.1 mg"
+          vitamin: "Vitamin A: 13 IU; Vitamin C: 2.1 mg"
         },{
           name: "Pawpaw",
           calories: "52 cal / 100 g",
           moisture_content: "85 g / 100 g",
           fibre: "1.7 g",
-          vitamin: "Vitamin A: 134 IU Vitamin C: 74.0 mg"
+          vitamin: "Vitamin A: 134 IU; Vitamin C: 74.0 mg"
         },
         {
           name: "Pork",
