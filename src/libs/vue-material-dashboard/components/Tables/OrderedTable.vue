@@ -67,36 +67,6 @@ export default {
           protein: "25.7 grams",
           vitamin: "Vitamin C: 306% RDA Vitamin B6: 8% RDA",
           water: "53%"
-        },{
-          name: "Strawberry",
-          calories: "39 cal / 100 g",
-          moisture_content: "89 grams / 100 g",
-          cellulose: "1.8 grams",
-          vitamin: "Vitamin A: 11 IU Vitamin C: 66.0 mg"
-        },{
-          name: "Banana",
-          calories: "91 cal / 100 g",
-          moisture_content: "74 grams / 100 g",
-          cellulose: "1.6 grams",
-          vitamin: "Vitamin A: 8 IU Vitamin C: 10.1 mg"
-        },{
-          name: "Pineapple",
-          calories: "46 cal / 100 g",
-          moisture_content: "87 grams / 100 g",
-          cellulose: "1.4 grams",
-          vitamin: "Vitamin A: 17 IU Vitamin C: 9.0 mg"
-        },{
-          name: "Apple",
-          calories: "50 cal / 100 g",
-          moisture_content: "86 grams / 100 g",
-          cellulose: "1.6 grams",
-          vitamin: "Vitamin A: 13 IU Vitamin C: 2.1 mg"
-        },{
-          name: "Pawpaw",
-          calories: "52 cal / 100 g",
-          moisture_content: "85 grams / 100 g",
-          cellulose: "1.7 grams",
-          vitamin: "Vitamin A: 134 IU Vitamin C: 74.0 mg"
         },
         {
           name: "Beef",
@@ -125,6 +95,40 @@ export default {
           fat: "6.2 grams / 100 g",
           protein: "53.4 grams",
           water: "40%"
+        },
+        {
+          name: "Strawberry",
+          calories: "39 cal / 100 g",
+          moisture_content: "89 grams / 100 g",
+          cellulose: "1.8 grams",
+          vitamin: "Vitamin A: 11 IU Vitamin C: 66.0 mg"
+        },
+        {
+          name: "Banana",
+          calories: "91 cal / 100 g",
+          moisture_content: "74 grams / 100 g",
+          cellulose: "1.6 grams",
+          vitamin: "Vitamin A: 8 IU Vitamin C: 10.1 mg"
+        },{
+          name: "Pineapple",
+          calories: "46 cal / 100 g",
+          moisture_content: "87 grams / 100 g",
+          cellulose: "1.4 grams",
+          vitamin: "Vitamin A: 17 IU Vitamin C: 9.0 mg"
+        },
+        {
+          name: "Apple",
+          calories: "50 cal / 100 g",
+          moisture_content: "86 grams / 100 g",
+          cellulose: "1.6 grams",
+          vitamin: "Vitamin A: 13 IU Vitamin C: 2.1 mg"
+        },
+        {
+          name: "Pawpaw",
+          calories: "52 cal / 100 g",
+          moisture_content: "85 grams / 100 g",
+          cellulose: "1.7 grams",
+          vitamin: "Vitamin A: 134 IU Vitamin C: 74.0 mg"
         },
       ]
     };
