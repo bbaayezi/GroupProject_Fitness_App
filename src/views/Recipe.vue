@@ -27,7 +27,7 @@
               <div class="display-2">Vegetables</div>
               <v-spacer></v-spacer>
               <v-card-actions>
-                <v-btn color="orange" flat>DETAIL</v-btn>
+                <v-btn color="orange" flat @click="goAnchor()">DETAIL</v-btn>
               </v-card-actions>
             </v-card-title>
           </v-card>
@@ -58,7 +58,7 @@
                   <div class="display-2">Fruits</div>
                   <v-spacer></v-spacer>
                   <v-card-actions>
-                    <v-btn color="orange" flat>DETAIL</v-btn>
+                    <v-btn color="orange" flat @click="goAnchor()">DETAIL</v-btn>
                   </v-card-actions>
                 </v-card-title>
               </v-card>
@@ -87,7 +87,7 @@
                   <div class="display-2">Meats</div>
                   <v-spacer></v-spacer>
                   <v-card-actions>
-                    <v-btn color="blue" flat>DETAIL</v-btn>
+                    <v-btn color="blue" flat @click="goAnchor()">DETAIL</v-btn>
                   </v-card-actions>
                 </v-card-title>
               </v-card>
@@ -115,7 +115,7 @@
               <div class="display-2">Diet</div>
               <v-spacer></v-spacer>
               <v-card-actions>
-                <v-btn color="orange" flat>DETAIL</v-btn>
+                <v-btn color="orange" @click="goAnchor()" flat>DETAIL</v-btn>
               </v-card-actions>
             </v-card-title>
           </v-card>
@@ -157,7 +157,10 @@ export default {
   methods: {
     onResize() {
       this.isMobile = window.innerWidth < 960;
-    }
+    },
+     goAnchor() {
+       document.documentElement.scrollTop = 1500;
+        },
   }
 };
 </script>
