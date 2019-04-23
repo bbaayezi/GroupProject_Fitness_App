@@ -85,17 +85,10 @@
       >
         <nav-tabs-card>
           <template slot="content">
-            <span class="md-nav-tabs-title">Tasks:</span>
+            <span class="md-nav-tabs-title">Record</span>
             <md-tabs md-sync-route class="md-success" md-alignment="left">
-              <md-tab id="tab-home" md-label="Bugs" md-icon="bug_report">
-                <nav-tabs-table></nav-tabs-table>
-              </md-tab>
 
-              <md-tab id="tab-pages" md-label="Website" md-icon="code">
-                <nav-tabs-table></nav-tabs-table>
-              </md-tab>
-
-              <md-tab id="tab-posts" md-label="server" md-icon="cloud">
+              <md-tab id="tab-posts" md-icon="assignment">
                 <nav-tabs-table></nav-tabs-table>
               </md-tab>
             </md-tabs>

@@ -69,6 +69,9 @@
 
   export default {
     data: () => ({
+      height:null,
+      weight: null,
+      age: null,
       gender:null,
       genderList: ['Male','Female','Decline to indicate'],
       valid: true,

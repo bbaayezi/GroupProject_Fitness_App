@@ -12,7 +12,7 @@
       <p class="card-description">Height: {{infoList.height}} Weight: {{infoList.weight}}</p>
       <!-- <p class="card-description">Weight: {{infoList.weight}}</p> -->
       <p class="card-description">Mail: {{infoList.mail}}</p>
-      <md-button class="md-round md-success">Follow</md-button>
+      <md-button class="md-round md-success">Edit</md-button>
     </md-card-content>
   </md-card>
 </template>
