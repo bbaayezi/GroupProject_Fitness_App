@@ -8,6 +8,9 @@
          <transition name="slide-fade">
           <md-table-cell v-if="show==2">{{ item.target }}</md-table-cell>
         </transition>
+        <transition name="slide-fade">
+          <md-table-cell v-if="show==3" class = "grey--text">{{ item.end }}</md-table-cell>
+        </transition>
           <md-table-cell >
             <transition name="slide-fade" >
             <v-form v-if="show==1">
@@ -50,7 +53,8 @@ export default {
       users: [
         {
           init: "Please add your target",
-          target: "null"
+          target: "null",
+          end: "You have finish your target today, come here tomorrow!"
         }
       ]
     };
