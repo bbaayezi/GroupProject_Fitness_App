@@ -177,7 +177,7 @@ export default {
   components: {
     UserCard,
     Calendars,
-    RecordTable
+    RecordTable,
     TrainerTable
   },
   methods: {
