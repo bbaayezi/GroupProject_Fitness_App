@@ -4,9 +4,7 @@
       <div class="mt-5 md-layout-item md-medium-size-100 md-size-100">
         <user-card></user-card>
       </div>
-      <div
-        class="md-layout-item md-medium-size-33 md-xsmall-size-100 md-size-33"
-      >
+      <div class="md-layout-item md-medium-size-33 md-xsmall-size-100 md-size-33">
         <chart-card
           :chart-data="dailySalesChart.data"
           :chart-options="dailySalesChart.options"
@@ -16,8 +14,8 @@
           <template slot="content">
             <h4 class="title">Daily Sales</h4>
             <p class="category">
-              <span class="text-success"
-                ><i class="fas fa-long-arrow-alt-up"></i> 55%
+              <span class="text-success">
+                <i class="fas fa-long-arrow-alt-up"></i> 55%
               </span>
               increase in today sales.
             </p>
@@ -25,15 +23,12 @@
 
           <template slot="footer">
             <div class="stats">
-              <md-icon>access_time</md-icon>
-              updated 4 minutes ago
+              <md-icon>access_time</md-icon>updated 4 minutes ago
             </div>
           </template>
         </chart-card>
       </div>
-      <div
-        class="md-layout-item md-medium-size-33 md-xsmall-size-100 md-size-33"
-      >
+      <div class="md-layout-item md-medium-size-33 md-xsmall-size-100 md-size-33">
         <chart-card
           :chart-data="emailsSubscriptionChart.data"
           :chart-options="emailsSubscriptionChart.options"
@@ -43,22 +38,17 @@
         >
           <template slot="content">
             <h4 class="title">Email Subscription</h4>
-            <p class="category">
-              Last Campaign Performance
-            </p>
+            <p class="category">Last Campaign Performance</p>
           </template>
 
           <template slot="footer">
             <div class="stats">
-              <md-icon>access_time</md-icon>
-              updated 10 days ago
+              <md-icon>access_time</md-icon>updated 10 days ago
             </div>
           </template>
         </chart-card>
       </div>
-      <div
-        class="md-layout-item md-medium-size-33 md-xsmall-size-100 md-size-33"
-      >
+      <div class="md-layout-item md-medium-size-33 md-xsmall-size-100 md-size-33">
         <chart-card
           :chart-data="dataCompletedTasksChart.data"
           :chart-options="dataCompletedTasksChart.options"
@@ -67,27 +57,21 @@
         >
           <template slot="content">
             <h4 class="title">Completed Tasks</h4>
-            <p class="category">
-              Last Campaign Performance
-            </p>
+            <p class="category">Last Campaign Performance</p>
           </template>
 
           <template slot="footer">
             <div class="stats">
-              <md-icon>access_time</md-icon>
-              campaign sent 26 minutes ago
+              <md-icon>access_time</md-icon>campaign sent 26 minutes ago
             </div>
           </template>
         </chart-card>
       </div>
-      <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
-      >
+      <div class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50">
         <nav-tabs-card>
           <template slot="content">
             <span class="md-nav-tabs-title">Record</span>
             <md-tabs md-sync-route class="md-success" md-alignment="left">
-
               <md-tab id="tab-posts" md-icon="assignment">
                 <nav-tabs-table></nav-tabs-table>
               </md-tab>
@@ -203,5 +187,85 @@ export default {
     Calendars,
     TrainerTable
   },
-}
+  methods: {
+    withStepsRecommendation(height, weight, age, steps) {
+      var indoorLow = ["push-up", "cruches", "weightlifting"];
+      var indoorHigh = ["aerobics", "mat tumbling", "burpees"];
+      var outdoorLow = ["skating", "riding", "walking"];
+      var outdoorHigh = ["hiking", "swimming", "playing basketball"];
+      var BMI = weight / (height * height);
+      if (age > 18 && age < 35) {
+        //adult average steps
+        if (steps > 12000) {
+          if (BMI > 28) {
+            //do indoor high intensity exercise
+            //做高强度运动，游泳，室内跑步机跑步，平板支撑，哑铃操
+            return "Why not try " + indoorHigh[Math.floor(2)] + " ?";
+          } else {
+            //do indoor low intensity exercise
+            //做室内低强度运动，仰卧起坐，俯卧撑，举重
+            return "Why not try " + indoorLow[Math.floor(2)] + " ?";
+          }
+        } else {
+          if (BMI > 28) {
+            //do outdoor high intensity exercise
+            //室外高强度运动，爬岩，远足，打篮球。。。
+            return "Why not try " + outdoorHigh[Math.floor(2)] + " ?";
+          } else {
+            //do outdoor low intensity exercise
+            //滑板，自行车。。。
+            return "Why not try " + outdoorLow[Math.floor(2)] + " ?";
+          }
+        }
+      } else {
+        if (steps < 12000 && steps > 8000) {
+          //do indoor low intensity exercise
+          //做室外低强度运动
+          return "Why not try " + outdoorLow[Math.floor(2)] + " ?";
+        } else {
+          //do indoor low intensity exercise
+          //做室内低强度运动
+          return "Why not try " + indoorLow[Math.floor(2)] + " ?";
+        }
+      }
+    },
+    withoutStepsRecommendation(height, weight, age) {
+      var indoorLow = ["push-up", "cruches", "weightlifting"];
+      var indoorHigh = ["aerobics", "mat tumbling", "burpees"];
+      var outdoorLow = ["skating", "riding", "walking"];
+      var outdoorHigh = ["hiking", "swimming", "playing basketball"];
+      var BMI = weight / (height * height);
+      if (age > 40) {
+        return (
+          "Why not try " +
+          indoorLow[Math.floor(2)] +
+          " / " +
+          outdoorLow[Math.floor(2)] +
+          " ?"
+        );
+      } else {
+        if (BMI < 28) {
+          return (
+            "Why not try " +
+            indoorLow[Math.floor(2)] +
+            " / " +
+            outdoorLow[Math.floor(2)] +
+            " ?"
+          );
+        } else {
+          return (
+            "Why not try " +
+            indoorHigh[Math.floor(2)] +
+            " / " +
+            outdoorHign[Math.floor(2)] +
+            " ?"
+          );
+        }
+      }
+    },
+    withoutInfo() {
+      return "Please fill in your information";
+    }
+  }
+};
 </script>
