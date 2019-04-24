@@ -187,8 +187,5 @@ export default {
   methods: {
     
   },
-  mounted() {
-    console.log(withStepsRecommendation(1.7, 70, 20, 12000));
-  }
 };
 </script>
