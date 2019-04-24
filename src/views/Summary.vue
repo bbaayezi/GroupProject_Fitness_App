@@ -3,7 +3,9 @@
     <v-layout row wrap justify-space-around>
       <div class="mt-5 md-layout-item md-medium-size-100 md-size-100">
         <user-card></user-card>
+        <RecommendationCard/>
       </div>
+      
       <div class="md-layout-item md-medium-size-33 md-xsmall-size-100 md-size-33">
         <chart-card
           :chart-data="dailySalesChart.data"
@@ -85,7 +87,7 @@ import UserCard from "@/components/UserCard";
 import Calendars from "@/components/Calendars";
 import TrainerTable from "@/components/TrainerTable";
 import RecordTable from "@/components/RecordTable";
-import {withStepsRecommendation} from "@/decitionTree.js";
+import RecommendationCard from "@/components/RecommendationCard";
 export default {
   data() {
     return {
@@ -178,8 +180,9 @@ export default {
   components: {
     UserCard,
     Calendars,
+    TrainerTable,
     RecordTable,
-    TrainerTable
+    RecommendationCard,
   },
   methods: {
     
