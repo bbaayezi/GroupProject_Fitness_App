@@ -92,7 +92,7 @@ export default {
       {
         title: "Hackathon",
         details: "Code like there is no tommorrow",
-        date: "2019-02-01",
+        date: "2019-04-24",
         open: false
       }
     ]
