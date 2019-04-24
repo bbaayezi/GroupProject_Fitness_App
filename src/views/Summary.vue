@@ -94,6 +94,7 @@ import UserCard from "@/components/UserCard";
 import Calendars from "@/components/Calendars";
 import TrainerTable from "@/components/TrainerTable";
 import RecordTable from "@/components/RecordTable";
+import RecommendationCard from "@/components/RecommendationCard";
 export default {
   data() {
     return {
@@ -186,89 +187,13 @@ export default {
   components: {
     UserCard,
     Calendars,
+    TrainerTable,
     RecordTable,
-    TrainerTable
+    RecommendationCard,
   },
   methods: {
-    withStepsRecommendation(height, weight, age, steps) {
-      var indoorLow = ["push-up", "cruches", "weightlifting"];
-      var indoorHigh = ["aerobics", "mat tumbling", "burpees"];
-      var outdoorLow = ["skating", "riding", "walking"];
-      var outdoorHigh = ["hiking", "swimming", "playing basketball"];
-      var BMI = weight / (height * height);
-      if (age > 18 && age < 35) {
-        //adult average steps
-        if (steps > 12000) {
-          if (BMI > 28) {
-            //do indoor high intensity exercise
-            //做高强度运动，游泳，室内跑步机跑步，平板支撑，哑铃操
-            return "Why not try " + indoorHigh[Math.floor(2)] + " ?";
-          } else {
-            //do indoor low intensity exercise
-            //做室内低强度运动，仰卧起坐，俯卧撑，举重
-            return "Why not try " + indoorLow[Math.floor(2)] + " ?";
-          }
-        } else {
-          if (BMI > 28) {
-            //do outdoor high intensity exercise
-            //室外高强度运动，爬岩，远足，打篮球。。。
-            return "Why not try " + outdoorHigh[Math.floor(2)] + " ?";
-          } else {
-            //do outdoor low intensity exercise
-            //滑板，自行车。。。
-            return "Why not try " + outdoorLow[Math.floor(2)] + " ?";
-          }
-        }
-      } else {
-        if (steps < 12000 && steps > 8000) {
-          //do indoor low intensity exercise
-          //做室外低强度运动
-          return "Why not try " + outdoorLow[Math.floor(2)] + " ?";
-        } else {
-          //do indoor low intensity exercise
-          //做室内低强度运动
-          return "Why not try " + indoorLow[Math.floor(2)] + " ?";
-        }
-      }
-    },
-    withoutStepsRecommendation(height, weight, age) {
-      var indoorLow = ["push-up", "cruches", "weightlifting"];
-      var indoorHigh = ["aerobics", "mat tumbling", "burpees"];
-      var outdoorLow = ["skating", "riding", "walking"];
-      var outdoorHigh = ["hiking", "swimming", "playing basketball"];
-      var BMI = weight / (height * height);
-      if (age > 40) {
-        return (
-          "Why not try " +
-          indoorLow[Math.floor(2)] +
-          " / " +
-          outdoorLow[Math.floor(2)] +
-          " ?"
-        );
-      } else {
-        if (BMI < 28) {
-          return (
-            "Why not try " +
-            indoorLow[Math.floor(2)] +
-            " / " +
-            outdoorLow[Math.floor(2)] +
-            " ?"
-          );
-        } else {
-          return (
-            "Why not try " +
-            indoorHigh[Math.floor(2)] +
-            " / " +
-            outdoorHign[Math.floor(2)] +
-            " ?"
-          );
-        }
-      }
-    },
-    withoutInfo() {
-      return "Please fill in your information";
-    }
-  }
+    
+  },
 };
 </script>
 <style>
