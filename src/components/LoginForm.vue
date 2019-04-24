@@ -71,6 +71,7 @@ export default {
       });
       console.log(res.data);
       if (res.data.authenticated) {
+        console.log(res.data.userData);
         this.$store.dispatch("toggleLogin", { status: true });
         this.$store.dispatch("toggleUserView", {status: "summary"})
         this.$router.push("summary");
