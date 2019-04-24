@@ -1,9 +1,15 @@
 <template>
 <v-content>
-  <div class="display-1 font-weight-bold orange--text text-md-center">Register</div>
-  <v-form ref="form" v-model="valid" lazy-validation>
-   <v-flex xs10 offset-xs1>
-    <v-text-field
+<v-stepper v-model="e6" vertical>
+    <v-stepper-step :complete="e6 > 1" step="1">
+      Select an app
+      <small>Summarize if needed</small>
+    </v-stepper-step>
+
+    <v-stepper-content step="1">
+      <v-card color="white lighten-1" class="mb-5" height="400px">
+        <v-form ref = "form1">
+        <v-text-field
       v-model="name"
       :rules="nameRules"
       :counter="10"
@@ -24,13 +30,24 @@
     ></v-text-field>
      <v-select
      :rules="[v => !!v || 'Please select an option']"
-          :items="genderList"
-          v-model="gender"
-          label="Sex"
-          required
-        ></v-select>
-        
-<v-text-field
+    :items="genderList"
+     v-model="gender"
+      label="Sex"
+       required
+      ></v-select>
+      <v-btn color="primary" :disabled="!valid" @click="submitStep1">Continue</v-btn>
+      <v-btn flat @click="clear">Clear</v-btn>
+      </v-form>
+      </v-card>
+     
+    </v-stepper-content>
+
+    <v-stepper-step :complete="e6 > 2" step="2">Configure analytics for this app</v-stepper-step>
+
+    <v-stepper-content step="2">
+      <v-card color="white lighten-1" class="mb-5" height="300px">
+        <v-form ref ="form2">
+        <v-text-field
       v-model="height"
       label="Height"
       hint = "optional"
@@ -45,22 +62,21 @@
       label="Age"
       hint = "optional"
     ></v-text-field>
-    <v-checkbox
-      v-model="checkbox"
-      :rules="[v => !!v || 'You must agree to continue!']"
-      label="Do you agree?"
-      required
-    ></v-checkbox>
+          <v-btn color="primary" @click="e6 = 3">Continue</v-btn>
+      <v-btn flat>Cancel</v-btn>
+      </v-form>
+      </v-card>
 
-    <v-btn
-      :disabled="!valid"
-      @click="submit"
-    >
-      submit
-    </v-btn>
-    <v-btn @click="clear">clear</v-btn>
-</v-flex>
-  </v-form>
+    </v-stepper-content>
+
+
+    <v-stepper-step step="3">View setup instructions</v-stepper-step>
+    <v-stepper-content step="3">
+      <v-card color="grey lighten-1" class="mb-5" height="200px"></v-card>
+      <v-btn color="primary" @click="e6 = 1">Continue</v-btn>
+      <v-btn flat>Cancel</v-btn>
+    </v-stepper-content>
+  </v-stepper>
   </v-content>
 </template>
 
@@ -69,6 +85,7 @@
 
   export default {
     data: () => ({
+      e6: 1,
       height:null,
       weight: null,
       age: null,
@@ -93,7 +110,6 @@
         v => (v && v.length <= 16) || 'Password must be less than 16 characters',
         v => /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(v) || 'Password must have at least one digit, one lower letter and one captial letter'
       ],
-      checkbox: false,
       row: null
     }),
     computed: {
@@ -101,6 +117,11 @@
     },
 
     methods: {
+      submitStep1(){
+       if (this.$refs.form1.validate()) {
+        this.e6 =2;
+         }
+      },
       submit () {
         if (this.$refs.form.validate()) {
           // Native form submission is not yet supported
@@ -112,7 +133,7 @@
             gender: this.gender,
             age: this.age,
             height: this.height,
-            weight: this.weight
+            weight: this.weight,
           })
           this.$router.push('login')
         }
