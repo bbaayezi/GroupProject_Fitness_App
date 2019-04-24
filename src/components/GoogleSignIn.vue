@@ -55,6 +55,8 @@ export default {
           if (result.data.status == "success") {
             console.log(`Token ${result.data.token}`);
             this.buttonClick = false;
+            // emit event
+            this.$emit("onAuthSuccess");
           }
           clearInterval(timer);
         }, 1000);
