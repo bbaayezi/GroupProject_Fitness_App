@@ -33,7 +33,7 @@
             <md-icon>edit</md-icon>
             <md-tooltip md-direction="top">Edit</md-tooltip>
           </md-button>
-          <md-button class="md-just-icon md-simple md-primary" v-if="show==2" v-on:click="show = 3">
+          <md-button class="md-just-icon md-simple md-primary" v-if="show==2" v-on:click="record()">
             <md-icon>done</md-icon>
             <md-tooltip md-direction="top">Done</md-tooltip>
           </md-button>
@@ -50,6 +50,7 @@ export default {
     return {
       selected: [],
       show: 0,
+      currentdate: "2019-4-23",
       users: [
         {
           init: "Please add your target",
@@ -66,6 +67,25 @@ export default {
     submit(){
       this.show = 2;
       this.users[0].target = document.getElementById("target").value
+    },
+    computeCurrentDate() {
+      var date = new Date();
+      var seperator1 = "-";
+      var year = date.getFullYear();
+      var month = date.getMonth() + 1;
+      var strDate = date.getDate();
+      if (month >= 1 && month <= 9) {
+        month = "0" + month;
+      }
+      if (strDate >= 0 && strDate <= 9) {
+        strDate = "0" + strDate;
+      }
+      var currentdate = year + seperator1 + month + seperator1 + strDate;
+      return currentdate;
+    },
+    record(){
+      this.show = 3;
+      this.currentDate = computeCurrentDate();
     }
   }
 };
