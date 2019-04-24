@@ -61,6 +61,9 @@ const router = new Router({
       path: '/summary',
       name: 'summary',
       component: () => import('./views/Summary.vue'),
+      meta: {
+        requireAuth: true
+      }
     },
     {
       path: '/home',
@@ -89,7 +92,7 @@ router.beforeEach((to, from, next) => {
   let loginStatus = store.getters.getLoginStatus
     if (to.meta.requireAuth) {
       if (!loginStatus) {
-        next('login')
+        next('home')
       } else {
         next()
       }
