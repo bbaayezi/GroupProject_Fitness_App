@@ -183,19 +183,8 @@ export default new Vuex.Store({
       ],
       exerciseList:[1,2,3,5,7,8,9],
     },
-    aboutPage:{
-      infoList: [{
-        ID: 123456,
-        name:"Mike",
-        age: 20,
-        gender: "Male",
-        height: 180,
-        weight: 120,
-        identity: "User",
-        mail:"mike@gmail.com",
-        img:"https://avataaars.io/?avatarStyle=Transparent&hairColor=orange&facialHairType=Blank&clotheType=Hoodie&clotheColor=red&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light",
-      },
-    ],
+    summaryPage:{
+      userInfo: {}
     },
   },
   
@@ -205,14 +194,22 @@ export default new Vuex.Store({
     },
     switchUserCurrentView(state,payload){
       state.userStatus.userCurrentView = payload.status
+    },
+    updateUser(state, payload) {
+      state.summaryPage.userInfo = payload
     }
   },
   actions: {
     toggleLogin({commit}, payload) {
+      console.log(`Action: toogleLogin with payload ${payload}`)
       commit('switchLoginStatus', payload)
     },
     toggleUserView({commit}, payload) {
       commit('switchUserCurrentView', payload)
+    },
+    setUserInfo({commit}, payload) {
+      console.log(`Action: setUserInfo with payload ${payload}`)
+      commit('updateUser', payload)
     }
   },
   getters: {
@@ -220,7 +217,7 @@ export default new Vuex.Store({
     getCarouselList: state => state.homePage.carouselList,
     getCourseList: state => state.homePage.courseList,
     getRecipeList: state => state.homePage.recipeList,
-    getInfoList: state => state.aboutPage.infoList,
+    getUserInfo: state => state.summaryPage.userInfo,
     getIndoorList: state => state.coursePage.indoorList,
     getOutdoorList: state => state.coursePage.outdoorList,
     getNutritionList: state => state.recipePage.nutritionList,

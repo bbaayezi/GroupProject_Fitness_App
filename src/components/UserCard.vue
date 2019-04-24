@@ -6,30 +6,30 @@
 
     <md-card-content>
       <h6 class="category text-gray">User</h6>
-      <h4 class="card-title">{{infoList.name}}</h4>
-      <p class="card-description">Age: {{infoList.age}} Gender: {{infoList.gender}}</p>
+      <h4 class="card-title">{{getUserInfo.name}}</h4>
+      <p class="card-description">Age: {{getUserInfo.age}} Gender: {{getUserInfo.sex}}</p>
 
       <!-- <p class="card-description">Gender: {{infoList.gender}}</p> -->
-      <p class="card-description">Height: {{infoList.height}} Weight: {{infoList.weight}}</p>
+      <p class="card-description">Height: {{getUserInfo.height}} Weight: {{getUserInfo.weight}}</p>
       <!-- <p class="card-description">Weight: {{infoList.weight}}</p> -->
-      <p class="card-description">Mail: {{infoList.mail}}</p>
+      <p class="card-description">Mail: {{getUserInfo.email}}</p>
       <v-layout justify-space-around>
             <v-flex xs12 sm6 md3 v-if="!show">
           <v-text-field 
             label="Age"
-            v-model="infoList.age"
+            v-model="getUserInfo.age"
           ></v-text-field>
         </v-flex>
         <v-flex xs12 sm6 md3 v-if="!show">
           <v-text-field
             label="Height"
-            v-model="infoList.height"
+            v-model="getUserInfo.height"
           ></v-text-field>
         </v-flex>
         <v-flex xs12 sm6 md3 v-if="!show">
           <v-text-field
             label="Weight"
-            v-model="infoList.weight"
+            v-model="getUserInfo.weight"
           ></v-text-field>
         </v-flex>
         </v-layout>
@@ -38,6 +38,7 @@
   </md-card>
 </template>
 <script>
+import { mapGetters } from 'vuex';
 export default {
   name: "user-card",
   props: {
@@ -45,7 +46,7 @@ export default {
       type: String,
       default:
         "https://avataaars.io/?avatarStyle=Transparent&hairColor=orange&facialHairType=Blank&clotheType=Hoodie&clotheColor=red&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light"
-    },
+    }
   },
   data() {
     return {
@@ -65,16 +66,22 @@ export default {
     };
   },
   methods:{
-    edit(){
-      this.show = !this.show;
+    async edit(){
       if(this.show == false){
-         axios.post(`http://test.scarlet-temp.tk/update-user-data?name=${infoList.name}`, {
+         let result = this.$axios.post(`http://test.scarlet-temp.tk/update-user-data?name=test`, {
           age: this.infoList.age,
           height: this.infoList.height,
           weight: this.infoList.weight
         })
+        if (result) {
+          console.log(result.data);
+        }
       }
+      this.show = !this.show;
     }
+  },
+  computed: {
+    ...mapGetters(['getUserInfo'])
   }
 };
 </script>

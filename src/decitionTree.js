@@ -11,32 +11,32 @@ const tree = {
         if (BMI > 28) {
           //do indoor high intensity exercise
           //做高强度运动，游泳，室内跑步机跑步，平板支撑，哑铃操
-          return "Why not try " + indoorHigh[Math.floor(Math.random()*3)] + " ?";
+          return "Why not try " + indoorHigh[Math.floor(Math.random()*3)] + "?";
         } else {
           //do indoor low intensity exercise
           //做室内低强度运动，仰卧起坐，俯卧撑，举重
-          return "Why not try " + indoorLow[Math.floor(Math.random()*3)] + " ?";
+          return "Why not try " + indoorLow[Math.floor(Math.random()*3)] + "?";
         }
       } else {
         if (BMI > 28) {
           //do outdoor high intensity exercise
           //室外高强度运动，爬岩，远足，打篮球。。。
-          return "Why not try " + outdoorHigh[Math.floor(Math.random()*3)] + " ?";
+          return "Why not try " + outdoorHigh[Math.floor(Math.random()*3)] + "?";
         } else {
           //do outdoor low intensity exercise
           //滑板，自行车。。。
-          return "Why not try " + outdoorLow[Math.floor(Math.random()*3)] + " ?";
+          return "Why not try " + outdoorLow[Math.floor(Math.random()*3)] + "?";
         }
       }
     } else {
       if (steps < 12000 && steps > 8000) {
         //do indoor low intensity exercise
         //做室外低强度运动
-        return "Why not try " + outdoorLow[Math.floor(Math.random()*3)] + " ?";
+        return "Why not try " + outdoorLow[Math.floor(Math.random()*3)] + "?";
       } else {
         //do indoor low intensity exercise
         //做室内低强度运动
-        return "Why not try " + indoorLow[Math.floor(Math.random()*3)] + " ?";
+        return "Why not try " + indoorLow[Math.floor(Math.random()*3)] + "?";
       }
     }
   },

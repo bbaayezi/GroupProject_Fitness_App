@@ -88,12 +88,14 @@ export default {
       if (this.$refs.form.validate()) {
         this.snackbar = true;
       }
-      let res = await axios.post("http://test.scarlet-temp.tk/submitLogin", {
+      let res = await axios.post("http://test.scarlet-temp.tk/submitLoginForm", {
         username: this.username,
         password: this.password
       });
       console.log(res.data);
+      
       if (res.data.authenticated) {
+        this.$store.dispatch('setUserInfo', res.data.userData);
         this.$store.dispatch("toggleLogin", { status: true });
         this.$router.push("home");
       }

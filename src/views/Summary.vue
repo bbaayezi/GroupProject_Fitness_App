@@ -2,7 +2,7 @@
   <v-content>
     <v-layout row wrap justify-space-around>
       <div class="mt-5 md-layout-item md-medium-size-100 md-size-100">
-        <user-card></user-card>
+        <user-card name="name"></user-card>
         <RecommendationCard/>
       </div>
       
