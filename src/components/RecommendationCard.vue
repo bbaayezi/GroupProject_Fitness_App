@@ -4,15 +4,14 @@
     <md-card-content>
       <!-- <h6 class="category text-gray">User</h6> -->
       <h4 class="card-title">Recommendation</h4>
-      <p class="card-description">Age: {{infoList.age}} Gender: {{infoList.gender}}</p>
-      <!-- <p class="card-description">Gender: {{infoList.gender}}</p> -->
-      <p class="card-description">Height: {{infoList.height}} Weight: {{infoList.weight}}</p>
-      <!-- <p class="card-description">Weight: {{infoList.weight}}</p> -->
-      <p class="card-description">Mail: {{infoList.mail}}</p>
+      <div class="display-3">
+        
+      </div>
     </md-card-content>
   </md-card>
 </template>
 <script>
+import tree from '@/decisionTree.js';
 export default {
   name: "user-card",
   props: {

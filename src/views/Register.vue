@@ -81,7 +81,7 @@ export default {
           email: this.email,
           password: this.password,
           checkbox: this.checkbox,
-          gender: this.gender,
+          sex: this.gender,
           age: this.age,
           height: this.height,
           weight: this.weight
