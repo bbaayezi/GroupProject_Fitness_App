@@ -2,6 +2,8 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import LoginPage from './views/LoginPage.vue';
 import Home from './views/Home.vue';
+import Register from './views/Register.vue';
+import Error from './views/Error.vue'
 
 // import mock data
 // in peoduction environment it will ve recieved from the server
@@ -22,18 +24,46 @@ const router = new Router({
       name: 'redirect',
       // meta: {
       //   requireAuth: true
-      // }
+      // },
       component: Home,
     },
+    // {
+    //   path: '/login',
+    //   name: 'login',
+    //   component: LoginPage
+    // },
     {
-      path: '/login',
-      name: 'login',
-      component: LoginPage
+      path: '/Register',
+      name: 'Register',
+      component: () => import('./views/Register.vue'),
+    },
+    // {
+    //   path: '/about',
+    //   name: 'about',
+    //   component: () => import('./views/About.vue'),
+    // },
+    {
+      path: '/course',
+      name: 'course',
+      component: () => import('./views/Course.vue'),
     },
     {
-      path: '/about',
-      name: 'about',
-      component: () => import('./views/About.vue'),
+      path: '/error',
+      name: 'error',
+      component: () => import('./views/Error.vue'),
+    },
+    {
+      path: '/recipe',
+      name: 'recipe',
+      component: () => import('./views/Recipe.vue'),
+    },
+    {
+      path: '/summary',
+      name: 'summary',
+      component: () => import('./views/Summary.vue'),
+      meta: {
+        requireAuth: true
+      }
     },
     {
       path: '/home',
@@ -42,9 +72,9 @@ const router = new Router({
       children: [
         
       ],
-      meta: {
-        requireAuth: true
-      }
+      // meta: {
+      //   requireAuth: true
+      // }
     }
   ]
 })
@@ -62,7 +92,7 @@ router.beforeEach((to, from, next) => {
   let loginStatus = store.getters.getLoginStatus
     if (to.meta.requireAuth) {
       if (!loginStatus) {
-        next('login')
+        next('home')
       } else {
         next()
       }
