@@ -87,7 +87,7 @@
                   <div class="display-2">Meats</div>
                   <v-spacer></v-spacer>
                   <v-card-actions>
-                    <v-btn color="blue" flat @click="goAnchor()">DETAIL</v-btn>
+                    <v-btn color="orange" flat @click="goAnchor()">DETAIL</v-btn>
                   </v-card-actions>
                 </v-card-title>
               </v-card>

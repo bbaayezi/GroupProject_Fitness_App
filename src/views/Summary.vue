@@ -1,11 +1,17 @@
 <template>
   <v-content>
-    <v-layout row wrap justify-space-around>
-      <div class="mt-5 md-layout-item md-medium-size-100 md-size-100">
-        <user-card></user-card>
-        <RecommendationCard/>
+    <v-container fluid pa-0>
+      <div class="word">
+      Hey!<br>Build <br>your body!
       </div>
-      
+      <div class="image"></div>
+    <v-layout row wrap justify-space-around justify-end>
+      <div class="mt-5 md-layout-item md-medium-size-100 md-size-100">
+        
+        <user-card></user-card>
+        
+      </div>
+    
       <div class="md-layout-item md-medium-size-33 md-xsmall-size-100 md-size-33">
         <chart-card
           :chart-data="dailySalesChart.data"
@@ -79,6 +85,7 @@
         <calendars/>
       </div>
     </v-layout>
+    </v-container>
   </v-content>
 </template>
 
@@ -189,3 +196,33 @@ export default {
   },
 };
 </script>
+<style>
+.image {
+  background-size: cover;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-blend-mode: soft-light;
+  background-color: #842E3D;
+   background-position: center center;
+  background-image: url("https://images.unsplash.com/photo-1483043012503-8a8849b4c949?dpr=2&auto=compress,format&fit=crop&w=767&h=512&q=80&cs=tinysrgb&crop=&bg=");
+}
+.word {
+  position: relative;
+  font-family: Avenir,Asap,Verdana,sans-serif;
+  font-size: 50px;
+  font-weight: 600;
+  margin: 100px;
+  padding: 5vw;
+  line-height: .8;
+  text-transform: uppercase;
+  font-weight: 900;
+  position: fixed;
+  z-index: 1;
+  mix-blend-mode: difference;
+  color: #22FF00;
+}
+
+</style>
+

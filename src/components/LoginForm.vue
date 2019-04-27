@@ -73,7 +73,8 @@ export default {
       if (res.data.authenticated) {
         console.log(res.data.userData);
         this.$store.dispatch("toggleLogin", { status: true });
-        this.$store.dispatch("toggleUserView", {status: "summary"})
+        this.$store.dispatch("toggleUserView", {status: "summary"});
+        this.$store.dispatch("setUserInfo", res.data.userData);
         this.$router.push("summary");
       }
       // update state in Vuex
