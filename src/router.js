@@ -11,7 +11,7 @@ import Error from './views/Error.vue'
 // import token from '../public/mock/token'
 import store from './store';
 
-// import axios from 'axios'
+import axios from 'axios'
 
 
 Vue.use(Router)
@@ -92,7 +92,20 @@ router.beforeEach((to, from, next) => {
   let loginStatus = store.getters.getLoginStatus
     if (to.meta.requireAuth) {
       if (!loginStatus) {
-        next('home')
+        // try to login with cookie
+        console.log('try to login with cookie');
+        axios.post('http://test.scarlet-temp.tk/login', {}, {
+          withCredentials: true
+        }).then(res => {
+          if (res.status == 200) {
+            console.log('Loged in with cookie');
+            store.dispatch('toggleLogin', {status: true});
+            next();
+          } else {
+            next('home')
+          }
+        }).catch(err => console.log(err));
+        
       } else {
         next()
       }

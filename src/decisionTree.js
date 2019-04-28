@@ -1,10 +1,15 @@
 const tree = {
   withStepsRecommendation(height, weight, age, steps) {
-    var indoorLow = ["push-up", "cruches", "weightlifting"];
-    var indoorHigh = ["aerobics", "mat tumbling", "burpees"];
-    var outdoorLow = ["skating", "riding", "walking"];
-    var outdoorHigh = ["hiking", "swimming", "playing basketball"];
-    var BMI = weight / (height * height);
+    if(height == 0 || weight == 0) {
+      return "Invalid info! Please check your input";
+    }
+    let indoorLow = ["push-up", "cruches", "weightlifting"];
+    let indoorHigh = ["aerobics", "mat tumbling", "burpees"];
+    let outdoorLow = ["skating", "riding", "walking"];
+    let outdoorHigh = ["hiking", "swimming", "playing basketball"];
+    // convert height to M
+    height = height / 100;
+    let BMI = weight / (height * height);
     if (age > 18 && age < 35) {
       //adult average steps
       if (steps > 12000) {
@@ -41,11 +46,15 @@ const tree = {
     }
   },
   withoutStepsRecommendation(height, weight, age) {
-    var indoorLow = ["push-up", "cruches", "weightlifting"];
-    var indoorHigh = ["aerobics", "mat tumbling", "burpees"];
-    var outdoorLow = ["skating", "riding", "walking"];
-    var outdoorHigh = ["hiking", "swimming", "playing basketball"];
-    var BMI = weight / (height * height);
+    if(height == 0 || weight == 0) {
+      return "Invalid info! Please check your input";
+    }
+    let indoorLow = ["push-up", "cruches", "weightlifting"];
+    let indoorHigh = ["aerobics", "mat tumbling", "burpees"];
+    let outdoorLow = ["skating", "riding", "walking"];
+    let outdoorHigh = ["hiking", "swimming", "playing basketball"];
+    height = height / 100;
+    let BMI = weight / (height * height);
     if (age > 40) {
       return (
         "Why not try " +
@@ -68,7 +77,7 @@ const tree = {
           "Why not try " +
           indoorHigh[Math.floor(Math.random()*3)] +
           " / " +
-          outdoorHign[Math.floor(Math.random()*3)] +
+          outdoorHigh[Math.floor(Math.random()*3)] +
           " ?"
         );
       }

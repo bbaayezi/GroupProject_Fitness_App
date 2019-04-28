@@ -14,32 +14,6 @@ export default new Vuex.Store({
       drawerSwitch: null
     },
     homePage: {
-      carouselList: [{
-          title: '1',
-          src: require('../public/img/card/banner1.jpg')
-          
-        },
-        {
-          title: '2',
-          src: require('../public/img/card/banner2.jpeg')
-        },
-        {
-          title: '3',
-          src: require('../public/img/card/banner3.jpg')
-        },
-      ],
-      courseList: [
-        {
-          title: "Indoor",
-          src: require('../public/img/card/indoor.jpg'),
-          link: 'course'
-        },
-        {
-          title: "Outdoor",
-          src: require('../public/img/card/outdoor.png'),
-          link: 'course'
-        }
-      ],
       recipeList: [
         {
           title: "Lose Weight",
@@ -184,7 +158,14 @@ export default new Vuex.Store({
       exerciseList:[1,2,3,5,7,8,9],
     },
     summaryPage:{
-      userInfo: {}
+      userInfo: {
+        name: null,
+        email: null,
+        age: null,
+        sex: null,
+        height: null,
+        weight: null
+      }
     },
   },
   
@@ -196,7 +177,14 @@ export default new Vuex.Store({
       state.userStatus.userCurrentView = payload.status
     },
     updateUser(state, payload) {
-      state.summaryPage.userInfo = payload
+      for (const key in payload) {
+        if (payload.hasOwnProperty(key)) {
+          const element = payload[key];
+          if (key in state.summaryPage.userInfo) {
+            state.summaryPage.userInfo[key] = element;
+          }
+        }
+      }
     }
   },
   actions: {

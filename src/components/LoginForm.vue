@@ -59,22 +59,19 @@ export default {
     }
   },
   methods: {
-    // 涉及异步方法，如以下提交表单方法时，使用 async await 语法糖
-    // 可有效减轻Promise回调地狱的情况
     async submitForm() {
       if (this.$refs.form.validate()) {
         this.snackbar = true;
       }
-      let res = await this.$axios.post("http://test.scarlet-temp.tk/submitLoginForm", {
-        username: this.username,
+      let res = await this.$axios.post("http://test.scarlet-temp.tk/login", {
+        name: this.username,
         password: this.password
-      });
-      console.log(res.data);
-      if (res.data.authenticated) {
-        console.log(res.data.userData);
-        this.$store.dispatch("toggleLogin", { status: true });
-        this.$store.dispatch("toggleUserView", {status: "summary"});
-        this.$store.dispatch("setUserInfo", res.data.userData);
+      }, {withCredentials: true});
+      
+      if (res.status == 200) {
+        console.log(res);
+        this.$store.dispatch('toggleLogin', {status: true});
+        this.$store.dispatch('setUserInfo', {name: this.username});
         this.$router.push("summary");
       }
       // update state in Vuex

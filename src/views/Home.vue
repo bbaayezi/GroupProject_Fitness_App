@@ -9,8 +9,11 @@
       <!-- place to hold login form -->
       <v-layout justify-end>
         <v-flex xs10 md8 class="hidden-sm-and-down">
-          <div class="display-3 font-weight-bold wordColor content-front">Join today
-            <br> for customized <br> workout plan</div>
+          <div class="display-3 font-weight-bold wordColor content-front">
+            Join today
+            <br>for customized
+            <br>workout plan
+          </div>
         </v-flex>
         <v-flex xs10 md4 ma-5>
           <login-form></login-form>
@@ -35,8 +38,10 @@
     </v-layout>-->
     <br>
     <br>
-     <v-subheader inset><div class = "display-1 font-weight-bold orange--text" >Course</div></v-subheader>
-     <v-divider inset></v-divider> 
+    <v-subheader inset>
+      <div class="display-1 font-weight-bold orange--text">Course</div>
+    </v-subheader>
+    <v-divider inset></v-divider>
     <br>
     <v-layout justify-space-around row wrap>
       <v-flex v-for="(card, id) in getCourseList" :key="id" xs12 sm6 md5>
@@ -46,8 +51,10 @@
     <br>
 
     <br>
-     <v-subheader inset><div class = "display-1 font-weight-bold orange--text" >Recipe</div></v-subheader>
-     <v-divider inset></v-divider> 
+    <v-subheader inset>
+      <div class="display-1 font-weight-bold orange--text">Recipe</div>
+    </v-subheader>
+    <v-divider inset></v-divider>
     <br>
     <v-layout justify-space-around row wrap>
       <v-flex v-for="(card, id) in getRecipeList" :key="id" xs12 sm4 md4>
@@ -96,7 +103,6 @@ export default {
   left: 10%;
   top: 4%;
   right: 10px;
-
 }
 .wordColor {
   color: #bdbdbd;

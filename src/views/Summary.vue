@@ -20,12 +20,12 @@
           data-background-color="blue"
         >
           <template slot="content">
-            <h4 class="title">Daily Sales</h4>
+            <h4 class="title">Daily Steps</h4>
             <p class="category">
               <span class="text-success">
                 <i class="fas fa-long-arrow-alt-up"></i> 55%
               </span>
-              increase in today sales.
+              increase by yesterday
             </p>
           </template>
 
@@ -45,8 +45,8 @@
           data-background-color="red"
         >
           <template slot="content">
-            <h4 class="title">Email Subscription</h4>
-            <p class="category">Last Campaign Performance</p>
+            <h4 class="title">Calories Consumption</h4>
+            <p class="category">Calories consumption chart</p>
           </template>
 
           <template slot="footer">
@@ -65,7 +65,7 @@
         >
           <template slot="content">
             <h4 class="title">Completed Tasks</h4>
-            <p class="category">Last Campaign Performance</p>
+            <p class="category">Completed tasks chart</p>
           </template>
 
           <template slot="footer">
@@ -76,10 +76,13 @@
         </chart-card>
       </div>
       <div class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50">
+        <recommendation-card></recommendation-card>
+      </div>
+      <div class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50">
         <record-table></record-table>
       </div>
       <div class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50">
-        <trainer-table></trainer-table>
+        <recipe-table></recipe-table>
       </div>
       <div class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-100">
         <calendars/>
@@ -92,9 +95,10 @@
 <script>
 import UserCard from "@/components/UserCard";
 import Calendars from "@/components/Calendars";
-import TrainerTable from "@/components/TrainerTable";
+import RecipeTable from "@/components/RecipeTable";
 import RecordTable from "@/components/RecordTable";
 import RecommendationCard from "@/components/RecommendationCard";
+import {mapGetters} from "vuex";
 export default {
   data() {
     return {
@@ -187,13 +191,34 @@ export default {
   components: {
     UserCard,
     Calendars,
-    TrainerTable,
+    RecipeTable,
     RecordTable,
     RecommendationCard,
   },
   methods: {
     
   },
+  computed: {
+    ...mapGetters(['getUserInfo'])
+  },
+  mounted() {
+    // fetch user information
+    // create query object
+    const data = {
+      queries: ['name', 'age', 'email', 'sex', 'height', 'weight']
+    }
+    const query = encodeURIComponent(JSON.stringify(data));
+    this.$axios.get(`http://test.scarlet-temp.tk/getuser?data=${query}`, {
+      withCredentials: true
+    })
+    .then(res => {
+      if (res.status == 200) {
+        console.log(`Response from server for update user info purpose:` + res.data + "");
+        this.$store.dispatch('setUserInfo', res.data.data);
+      }
+    })
+    .catch(err => console.log(err));
+  }
 };
 </script>
 <style>

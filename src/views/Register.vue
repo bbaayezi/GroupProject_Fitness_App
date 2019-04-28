@@ -51,7 +51,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import GoogleSignIn from "@/components/GoogleSignIn";
 export default {
   data: () => ({
@@ -100,17 +99,23 @@ export default {
     submit() {
       if (this.$refs.form.validate()) {
         // Native form submission is not yet supported
-        axios.post("/api/submit", {
+        this.$axios.post('http://test.scarlet-temp.tk/register', {
           name: this.name,
           email: this.email,
           password: this.password,
-          checkbox: this.checkbox,
           sex: this.gender,
           age: this.age,
           height: this.height,
           weight: this.weight
+        }).then(res => {
+          // register successful
+          if (res.status == 200) {
+            this.$router.push('summary');
+          }
+        }).catch(err => {
+          console.log(err);
+          this.$router.push("home");
         });
-        this.$router.push("login");
       }
     },
     clear() {

@@ -66,16 +66,22 @@ export default {
     };
   },
   methods:{
-    async edit(){
+    edit(){
       if(this.show == false){
-         let result = this.$axios.post(`http://test.scarlet-temp.tk/update-user-data?name=test`, {
+        let info = {
           age: this.infoList.age,
           height: this.infoList.height,
           weight: this.infoList.weight
-        })
-        if (result) {
-          console.log(result.data);
-        }
+        };
+        this.$axios.post(`http://test.scarlet-temp.tk/updateuser`, info, {
+          withCredentials: true
+        }).then(res => {
+          if (res.status == 200) {
+            console.log('update successful');
+            this.$store.dispatch('setUserInfo', info);
+          }
+        }).catch(err => console.log(err));
+        
       }
       this.show = !this.show;
     }
