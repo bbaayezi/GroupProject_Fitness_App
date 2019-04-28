@@ -79,7 +79,7 @@ export default {
     };
   },
   components: {
-    LoginForm
+    LoginForm,
   },
   methods: {
     // 涉及异步方法，如以下提交表单方法时，使用 async await 语法糖

@@ -2,10 +2,8 @@
   <v-card class="elevation-12">
     <v-toolbar dark color="#ffad33">
       <v-toolbar-title>Login form</v-toolbar-title>
-      <v-spacer></v-spacer>
       <v-tooltip bottom>
         <v-btn slot="activator" icon large target="_blank">
-          <v-icon large>code</v-icon>
         </v-btn>
       </v-tooltip>
     </v-toolbar>
@@ -34,7 +32,10 @@
     </v-card-text>
     <v-card-actions>
       <v-spacer></v-spacer>
-      <v-btn flat color="#757575" @click="register">Don't have an account?</v-btn>
+      <v-layout column>
+            <v-btn flat color="#757575" @click="register">Don't have an account?</v-btn>
+       <google-sign-in></google-sign-in>
+      </v-layout>
       <v-btn
         :disabled="!valid"
         class="mx-3 white--text"
@@ -45,6 +46,7 @@
   </v-card>
 </template>
 <script>
+import GoogleSignIn from "@/components/GoogleSignIn";
 export default {
   data() {
     return {
@@ -57,6 +59,9 @@ export default {
         v => (v && v.length <= 16) || "name must be less than 16 characters"
       ]
     }
+  },
+  components: {
+    GoogleSignIn
   },
   methods: {
     // 涉及异步方法，如以下提交表单方法时，使用 async await 语法糖
