@@ -201,23 +201,23 @@ export default {
   computed: {
     ...mapGetters(['getUserInfo'])
   },
-  mounted() {
+  async mounted() {
     // fetch user information
     // create query object
     const data = {
       queries: ['name', 'age', 'email', 'sex', 'height', 'weight']
     }
     const query = encodeURIComponent(JSON.stringify(data));
-    this.$axios.get(`http://test.scarlet-temp.tk/getuser?data=${query}`, {
-      withCredentials: true
-    })
-    .then(res => {
+    const res = await this.$fitnessHttp.get(`getuser?data=${query}`)
+    .catch(err => console.log(err));
+    console.log(res);
+    if (res) {
+      
       if (res.status == 200) {
         console.log(`Response from server for update user info purpose:` + res.data + "");
         this.$store.dispatch('setUserInfo', res.data.data);
       }
-    })
-    .catch(err => console.log(err));
+    }
   }
 };
 </script>

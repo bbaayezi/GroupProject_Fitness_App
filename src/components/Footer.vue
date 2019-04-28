@@ -1,6 +1,7 @@
 <template>
   <v-footer
     height="auto"
+    class="pa-0"
   >
     <v-card
       flat

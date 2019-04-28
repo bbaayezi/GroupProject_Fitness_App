@@ -79,39 +79,39 @@ const router = new Router({
   ]
 })
 
-router.beforeEach((to, from, next) => {
-  // can be optimized by utilizing local storage
-  // TODO: implement local storge with Vuex
-  // axios.get('http://localhost:3000/getToken' /* This server is run seperately */)
-  // .then(res => {
+// router.beforeEach((to, from, next) => {
+//   // can be optimized by utilizing local storage
+//   // TODO: implement local storge with Vuex
+//   // axios.get('http://localhost:3000/getToken' /* This server is run seperately */)
+//   // .then(res => {
     
-  // })
-  // .catch(err => {
-  //   console.log(err)
-  // })
-  let loginStatus = store.getters.getLoginStatus
-    if (to.meta.requireAuth) {
-      if (!loginStatus) {
-        // try to login with cookie
-        console.log('try to login with cookie');
-        axios.post('http://test.scarlet-temp.tk/login', {}, {
-          withCredentials: true
-        }).then(res => {
-          if (res.status == 200) {
-            console.log('Loged in with cookie');
-            store.dispatch('toggleLogin', {status: true});
-            next();
-          } else {
-            next('home')
-          }
-        }).catch(err => console.log(err));
+//   // })
+//   // .catch(err => {
+//   //   console.log(err)
+//   // })
+//   let loginStatus = store.getters.getLoginStatus
+//     if (to.meta.requireAuth) {
+//       if (!loginStatus) {
+//         // try to login with cookie
+//         console.log('try to login with cookie');
+//         axios.post('http://test.scarlet-temp.tk/login', {}, {
+//           withCredentials: true
+//         }).then(res => {
+//           if (res.status == 200) {
+//             console.log('Loged in with cookie');
+//             store.dispatch('toggleLogin', {status: true});
+//             next();
+//           } else {
+//             next('home')
+//           }
+//         }).catch(err => console.log(err));
         
-      } else {
-        next()
-      }
-    } else {
-      next()
-    }
-})
+//       } else {
+//         next()
+//       }
+//     } else {
+//       next()
+//     }
+// })
 
 export default router

@@ -14,31 +14,23 @@
       <!-- <p class="card-description">Weight: {{infoList.weight}}</p> -->
       <p class="card-description">Mail: {{getUserInfo.email}}</p>
       <v-layout justify-space-around>
-            <v-flex xs12 sm6 md3 v-if="!show">
-          <v-text-field 
-            label="Age"
-            v-model="getUserInfo.age"
-          ></v-text-field>
+        <v-flex xs12 sm6 md3 v-if="!show">
+          <v-text-field label="Age" v-model="editable.age"></v-text-field>
         </v-flex>
         <v-flex xs12 sm6 md3 v-if="!show">
-          <v-text-field
-            label="Height"
-            v-model="getUserInfo.height"
-          ></v-text-field>
+          <v-text-field label="Height" v-model="editable.height"></v-text-field>
         </v-flex>
         <v-flex xs12 sm6 md3 v-if="!show">
-          <v-text-field
-            label="Weight"
-            v-model="getUserInfo.weight"
-          ></v-text-field>
+          <v-text-field label="Weight" v-model="editable.weight"></v-text-field>
         </v-flex>
-        </v-layout>
-      <md-button class="md-round md-success" @click = "edit">{{show? "Edit":"Finish"}}</md-button>
+      </v-layout>
+      <md-button class="md-round md-success" @click="edit">Edit</md-button>
+      <md-button class="md-round md-success" @click="updateUserInfo" v-if="!show">Update</md-button>
     </md-card-content>
   </md-card>
 </template>
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from "vuex";
 export default {
   name: "user-card",
   props: {
@@ -51,43 +43,40 @@ export default {
   data() {
     return {
       show: true,
-      infoList: {
-        ID: 123456,
-        name: "Mike",
-        age: 20,
-        gender: "Male",
-        height: 180,
-        weight: 120,
-        identity: "User",
-        mail: "mike@gmail.com",
-        img:
-          "https://avataaars.io/?avatarStyle=Transparent&hairColor=orange&facialHairType=Blank&clotheType=Hoodie&clotheColor=red&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light"
+      editable: {
+        age: null,
+        height: null,
+        weight: null
       }
     };
   },
-  methods:{
-    edit(){
-      if(this.show == false){
-        let info = {
-          age: this.infoList.age,
-          height: this.infoList.height,
-          weight: this.infoList.weight
-        };
-        this.$axios.post(`http://test.scarlet-temp.tk/updateuser`, info, {
-          withCredentials: true
-        }).then(res => {
+  methods: {
+    edit() {
+      this.show = !this.show;
+      this.editable.age = this.$store.getters.getUserInfo.age;
+      this.editable.height = this.$store.getters.getUserInfo.height;
+      this.editable.weight = this.$store.getters.getUserInfo.weight;
+    },
+    updateUserInfo() {
+      let info = {
+        age: this.editable.age,
+        height: this.editable.height,
+        weight: this.editable.weight
+      };
+      this.$fitnessHttp
+        .post(`updateuser`, info)
+        .then(res => {
           if (res.status == 200) {
-            console.log('update successful');
-            this.$store.dispatch('setUserInfo', info);
+            console.log("update successful");
+            this.$store.dispatch("setUserInfo", info);
           }
-        }).catch(err => console.log(err));
-        
-      }
+        })
+        .catch(err => console.log(err));
       this.show = !this.show;
     }
   },
   computed: {
-    ...mapGetters(['getUserInfo'])
+    ...mapGetters(["getUserInfo"])
   }
 };
 </script>

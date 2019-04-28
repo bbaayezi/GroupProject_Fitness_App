@@ -113,6 +113,8 @@ export default {
         this.$store.dispatch("toggleLogin", { status: false });
         this.$store.dispatch("toggleUserView", { status: "home" });
         this.$router.push("/");
+        // clear localstorage
+        window.localStorage.clear();
       } else {
         // login
         this.$router.push("login");

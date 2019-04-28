@@ -63,10 +63,10 @@ export default {
       if (this.$refs.form.validate()) {
         this.snackbar = true;
       }
-      let res = await this.$axios.post("http://test.scarlet-temp.tk/login", {
+      let res = await this.$fitnessHttp.post("login", {
         name: this.username,
         password: this.password
-      }, {withCredentials: true});
+      });
       
       if (res.status == 200) {
         console.log(res);
