@@ -34,7 +34,7 @@
       <v-spacer></v-spacer>
       <v-layout column>
             <v-btn flat color="#757575" @click="register">Don't have an account?</v-btn>
-       <google-sign-in></google-sign-in>
+       <google-sign-in @onAuthSuccess="oauthSuccess"></google-sign-in>
       </v-layout>
       <v-btn
         :disabled="!valid"
@@ -83,6 +83,13 @@ export default {
     },
     register() {
       this.$router.push("register");
+    },
+    oauthSuccess() {
+      console.log('Oauth success');
+      console.log(`Setting oauth login`);
+      this.$store.dispatch('setOauthLogin', true);
+      this.$store.dispatch('toggleLogin', {status: true});
+      this.$router.push('summary');
     }
   }
 };

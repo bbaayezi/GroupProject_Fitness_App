@@ -8,6 +8,7 @@ export default new Vuex.Store({
     userStatus: {
       // check for login status
       isLoggedIn: false,
+      isOauth: false,
       userCurrentView: 'home',
     },
     navbar: {
@@ -185,6 +186,9 @@ export default new Vuex.Store({
           }
         }
       }
+    },
+    updateOauthLogin(state, status) {
+      state.userStatus.isOauth = status;
     }
   },
   actions: {
@@ -198,6 +202,9 @@ export default new Vuex.Store({
     setUserInfo({commit}, payload) {
       console.log(`Action: setUserInfo with payload ${payload}`)
       commit('updateUser', payload)
+    },
+    setOauthLogin({commit}, status) {
+      commit('updateOauthLogin', status);
     }
   },
   getters: {
@@ -210,6 +217,7 @@ export default new Vuex.Store({
     getOutdoorList: state => state.coursePage.outdoorList,
     getNutritionList: state => state.recipePage.nutritionList,
     getExerciseList: state => state.recipePage.exerciseList,
-    getUserCurrentView: state => state.userStatus.userCurrentView
+    getUserCurrentView: state => state.userStatus.userCurrentView,
+    getOauthStatus: state => state.userStatus.isOauth
   }
 })

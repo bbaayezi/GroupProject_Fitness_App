@@ -111,6 +111,7 @@ export default {
       if (this.$store.getters.getLoginStatus) {
         // logout
         this.$store.dispatch("toggleLogin", { status: false });
+        this.$store.dispatch('setOauthLogin', false);
         this.$store.dispatch("toggleUserView", { status: "home" });
         this.$router.push("/");
         // clear localstorage

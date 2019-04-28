@@ -51,14 +51,21 @@ export default {
         let timer = setInterval(async () => {
           let result = await this.$axios.get(
             "http://oauth.scarlet-temp.tk/access_token"
-          );
-          if (result.data.status == "success") {
+          ).catch(err => {
+            console.log(err);
+            clearInterval(timer);
+          });
+          console.log(`Response: `);
+          console.dir(result.data)
+          if (result.data.status == 'success') {
             console.log(`Token ${result.data.token}`);
+            window.localStorage.setItem('oauth_token', result.data.token);
             this.buttonClick = false;
             // emit event
             this.$emit("onAuthSuccess");
+            clearInterval(timer);
           }
-          clearInterval(timer);
+          
         }, 1000);
       }
     }

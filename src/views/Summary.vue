@@ -2,92 +2,92 @@
   <v-content>
     <v-container fluid pa-0>
       <div class="word">
-      Hey!<br>Build <br>your body!
+        Hey!
+        <br>Build
+        <br>your body!
       </div>
       <div class="image"></div>
-    <v-layout row wrap justify-space-around justify-end>
-      <div class="mt-5 md-layout-item md-medium-size-100 md-size-100">
-        
-        <user-card></user-card>
-        
-      </div>
-    
-      <div class="md-layout-item md-medium-size-33 md-xsmall-size-100 md-size-33">
-        <chart-card
-          :chart-data="dailySalesChart.data"
-          :chart-options="dailySalesChart.options"
-          :chart-type="'Line'"
-          data-background-color="blue"
-        >
-          <template slot="content">
-            <h4 class="title">Daily Steps</h4>
-            <p class="category">
-              <span class="text-success">
-                <i class="fas fa-long-arrow-alt-up"></i> 55%
-              </span>
-              increase by yesterday
-            </p>
-          </template>
+      <v-layout row wrap justify-space-around justify-end>
+        <div class="mt-5 md-layout-item md-medium-size-100 md-size-100">
+          <user-card></user-card>
+        </div>
 
-          <template slot="footer">
-            <div class="stats">
-              <md-icon>access_time</md-icon>updated 4 minutes ago
-            </div>
-          </template>
-        </chart-card>
-      </div>
-      <div class="md-layout-item md-medium-size-33 md-xsmall-size-100 md-size-33">
-        <chart-card
-          :chart-data="emailsSubscriptionChart.data"
-          :chart-options="emailsSubscriptionChart.options"
-          :chart-responsive-options="emailsSubscriptionChart.responsiveOptions"
-          :chart-type="'Bar'"
-          data-background-color="red"
-        >
-          <template slot="content">
-            <h4 class="title">Calories Consumption</h4>
-            <p class="category">Calories consumption chart</p>
-          </template>
+        <div class="md-layout-item md-medium-size-33 md-xsmall-size-100 md-size-33">
+          <chart-card
+            :chart-data="dailySalesChart.data"
+            :chart-options="dailySalesChart.options"
+            :chart-type="'Line'"
+            data-background-color="blue"
+          >
+            <template slot="content">
+              <h4 class="title">Daily Steps</h4>
+              <p class="category">
+                <span class="text-success">
+                  <i class="fas fa-long-arrow-alt-up"></i> 55%
+                </span>
+                increase by yesterday
+              </p>
+            </template>
 
-          <template slot="footer">
-            <div class="stats">
-              <md-icon>access_time</md-icon>updated 10 days ago
-            </div>
-          </template>
-        </chart-card>
-      </div>
-      <div class="md-layout-item md-medium-size-33 md-xsmall-size-100 md-size-33">
-        <chart-card
-          :chart-data="dataCompletedTasksChart.data"
-          :chart-options="dataCompletedTasksChart.options"
-          :chart-type="'Line'"
-          data-background-color="green"
-        >
-          <template slot="content">
-            <h4 class="title">Completed Tasks</h4>
-            <p class="category">Completed tasks chart</p>
-          </template>
+            <template slot="footer">
+              <div class="stats">
+                <md-icon>access_time</md-icon>updated 4 minutes ago
+              </div>
+            </template>
+          </chart-card>
+        </div>
+        <div class="md-layout-item md-medium-size-33 md-xsmall-size-100 md-size-33">
+          <chart-card
+            :chart-data="emailsSubscriptionChart.data"
+            :chart-options="emailsSubscriptionChart.options"
+            :chart-responsive-options="emailsSubscriptionChart.responsiveOptions"
+            :chart-type="'Bar'"
+            data-background-color="red"
+          >
+            <template slot="content">
+              <h4 class="title">Calories Consumption</h4>
+              <p class="category">Calories consumption chart</p>
+            </template>
 
-          <template slot="footer">
-            <div class="stats">
-              <md-icon>access_time</md-icon>campaign sent 26 minutes ago
-            </div>
-          </template>
-        </chart-card>
-      </div>
-      <div class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50">
-        <recommendation-card></recommendation-card>
-      </div>
-      <div class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50">
-        <record-table></record-table>
-      </div>
-      <div class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50">
-        <recipe-table></recipe-table>
-      </div>
-      <div class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-100">
-        <calendars/>
-      </div>
-    </v-layout>
+            <template slot="footer">
+              <div class="stats">
+                <md-icon>access_time</md-icon>updated 10 days ago
+              </div>
+            </template>
+          </chart-card>
+        </div>
+        <div class="md-layout-item md-medium-size-33 md-xsmall-size-100 md-size-33">
+          <chart-card
+            :chart-data="dataCompletedTasksChart.data"
+            :chart-options="dataCompletedTasksChart.options"
+            :chart-type="'Line'"
+            data-background-color="green"
+          >
+            <template slot="content">
+              <h4 class="title">Completed Tasks</h4>
+              <p class="category">Completed tasks chart</p>
+            </template>
+
+            <template slot="footer">
+              <div class="stats">
+                <md-icon>access_time</md-icon>campaign sent 26 minutes ago
+              </div>
+            </template>
+          </chart-card>
+        </div>
+        <div class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50">
+          <recommendation-card></recommendation-card>
+        </div>
+        <div class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50">
+          <record-table></record-table>
+        </div>
+        <div class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50">
+          <recipe-table></recipe-table>
+        </div>
+        <div class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-100">
+          <calendars/>
+        </div>
+      </v-layout>
     </v-container>
   </v-content>
 </template>
@@ -98,7 +98,7 @@ import Calendars from "@/components/Calendars";
 import RecipeTable from "@/components/RecipeTable";
 import RecordTable from "@/components/RecordTable";
 import RecommendationCard from "@/components/RecommendationCard";
-import {mapGetters} from "vuex";
+import { mapGetters } from "vuex";
 export default {
   data() {
     return {
@@ -193,29 +193,46 @@ export default {
     Calendars,
     RecipeTable,
     RecordTable,
-    RecommendationCard,
+    RecommendationCard
   },
-  methods: {
-    
-  },
+  methods: {},
   computed: {
-    ...mapGetters(['getUserInfo'])
+    ...mapGetters(["getUserInfo"])
   },
   async mounted() {
     // fetch user information
     // create query object
     const data = {
-      queries: ['name', 'age', 'email', 'sex', 'height', 'weight']
-    }
+      queries: ["name", "age", "email", "sex", "height", "weight"]
+    };
     const query = encodeURIComponent(JSON.stringify(data));
-    const res = await this.$fitnessHttp.get(`getuser?data=${query}`)
-    .catch(err => console.log(err));
-    console.log(res);
-    if (res) {
-      
-      if (res.status == 200) {
-        console.log(`Response from server for update user info purpose:` + res.data + "");
-        this.$store.dispatch('setUserInfo', res.data.data);
+    if (!this.$store.getters.getOauthStatus) {
+      console.log(`Formal user login`);
+      const res = await this.$fitnessHttp
+        .get(`getuser?data=${query}`)
+        .catch(err => console.log(err));
+      console.log(res);
+      if (res) {
+        if (res.status == 200) {
+          console.log(
+            `Response from server for update user info purpose:` + res.data + ""
+          );
+          this.$store.dispatch("setUserInfo", res.data.data);
+        }
+      }
+    } else {
+      console.log(`Update from oauth serevr`);
+      const res = await this.$oauthHttp
+        .get(`getuser?data=${query}`)
+        .catch(err => console.log(err));
+      console.log(res);
+      if (res) {
+        if (res.status == 200) {
+          console.log(
+            `Response from Oauth server:` + res.data + ""
+          );
+          this.$store.dispatch("setUserInfo", res.data.data);
+        }
       }
     }
   }
@@ -229,25 +246,24 @@ export default {
   width: 100%;
   height: 100vh;
   background-blend-mode: soft-light;
-  background-color: #842E3D;
-   background-position: center center;
+  background-color: #842e3d;
+  background-position: center center;
   background-image: url("https://images.unsplash.com/photo-1483043012503-8a8849b4c949?dpr=2&auto=compress,format&fit=crop&w=767&h=512&q=80&cs=tinysrgb&crop=&bg=");
 }
 .word {
   position: relative;
-  font-family: Avenir,Asap,Verdana,sans-serif;
+  font-family: Avenir, Asap, Verdana, sans-serif;
   font-size: 50px;
   font-weight: 600;
   margin: 100px;
   padding: 5vw;
-  line-height: .8;
+  line-height: 0.8;
   text-transform: uppercase;
   font-weight: 900;
   position: fixed;
   z-index: 1;
   mix-blend-mode: difference;
-  color: #22FF00;
+  color: #22ff00;
 }
-
 </style>
 
