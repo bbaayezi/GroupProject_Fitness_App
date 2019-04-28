@@ -2,8 +2,8 @@
   <v-content>
     <v-stepper v-model="e6" vertical>
       <v-stepper-step :complete="e6 > 1" step="1">
-        Select an app
-        <small>Summarize if needed</small>
+        Basic information
+        <small>Fill in form or sign up with Google</small>
       </v-stepper-step>
 
       <v-stepper-content step="1">
@@ -26,7 +26,7 @@
         </v-card>
       </v-stepper-content>
 
-      <v-stepper-step :complete="e6 > 2" step="2">Configure analytics for this app</v-stepper-step>
+      <v-stepper-step :complete="e6 > 2" step="2">Further Information</v-stepper-step>
 
       <v-stepper-content step="2">
         <v-card color="white lighten-1" class="mb-5" height="300px">
@@ -40,7 +40,7 @@
         </v-card>
       </v-stepper-content>
 
-      <v-stepper-step step="3">View setup instructions</v-stepper-step>
+      <v-stepper-step step="3">Finish</v-stepper-step>
       <v-stepper-content step="3">
         <v-card color="grey lighten-1" class="mb-5" height="200px"></v-card>
         <v-btn color="primary" @click="e6 = 1">Continue</v-btn>

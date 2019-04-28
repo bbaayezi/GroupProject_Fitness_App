@@ -84,15 +84,15 @@ export default {
         open: false
       },
       {
-        title: "Conference",
+        title: "running",
         details: "Mute myself the whole time and wonder why I am on this call",
-        date: "2019-01-21",
+        date: "2019-04-29",
         open: false
       },
       {
-        title: "Hackathon",
+        title: "swimming",
         details: "Code like there is no tommorrow",
-        date: "2019-04-24",
+        date: "2019-04-28",
         open: false
       }
     ]
